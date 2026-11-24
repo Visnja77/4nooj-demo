@@ -7,131 +7,691 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#14254a;--navy2:#1d3566;--orange:#f37021;--orange2:#ff9a3c;--sun:#ffd86b;--cream:#fff8ee;--sky:#eef4ff;--ink:#1b2236;--muted:#5b6478;--green:#2f9e44;--line:#e8e0d2;--r:18px;--shadow:0 10px 30px -12px rgba(20,37,74,.25)}
-*{box-sizing:border-box}html,body{margin:0}body{font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff3e0 0%,#fdf7ee 40%,#eef4ff 100%);min-height:100vh;line-height:1.5}button{font:inherit;cursor:pointer}input,textarea,select{font:inherit;color:inherit}.hand{font-family:Caveat,cursive}.demo-ribbon{background:var(--navy);color:#fff;font-size:13px;text-align:center;padding:6px 12px;letter-spacing:.3px}.demo-ribbon b{color:var(--sun)}
-.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1240px;margin:0 auto;flex-wrap:wrap}.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);cursor:pointer}.logo .mark{font-weight:900;font-size:30px;letter-spacing:-1px;font-style:italic}.logo .mark span{color:var(--orange)}.logo small{display:block;font-size:12px;color:var(--muted);font-weight:700;line-height:1.1}.nav{display:flex;gap:6px;flex-wrap:wrap}.nav button{background:transparent;border:0;padding:8px 14px;border-radius:999px;font-weight:800;color:var(--navy)}.nav button.on{background:var(--navy);color:#fff}
-.trail{display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.8px}.trail svg{width:34px;height:18px}.flag{display:inline-block;width:18px;height:22px;vertical-align:-4px}.wrap{max-width:1240px;margin:0 auto;padding:10px 24px 60px}.view{display:none}.view.on{display:block;animation:fade .35s ease}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.hero{position:relative;border-radius:28px;overflow:hidden;background:radial-gradient(circle at 80% 15%,rgba(255,216,107,.9),transparent 35%),linear-gradient(180deg,#ffe2b8 0%,#ffd1a1 45%,#f6b98a 100%);padding:56px 48px 190px;box-shadow:var(--shadow)}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:10px 0 12px;color:var(--navy);font-weight:900}.hero h1 em{font-style:normal;color:var(--orange)}.hero p.lead{font-size:19px;max-width:620px;color:#3a3020}.hero .slogan{font-size:34px;color:var(--navy);margin:14px 0 26px}.mountains{position:absolute;left:0;right:0;bottom:0;height:150px}
-.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 24px;font-weight:900;font-size:16px;transition:transform .15s}.btn:hover{transform:translateY(-1px)}.btn.primary{background:linear-gradient(90deg,var(--orange),var(--orange2));color:#fff;box-shadow:0 8px 18px -8px rgba(243,112,33,.8)}.btn.ghost{background:#fff;color:var(--navy);border:2px solid var(--navy)}.btn.soft{background:#fff1d6;color:var(--navy)}.btn.sm{padding:8px 14px;font-size:14px}.btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.link{background:none;border:0;color:var(--navy);text-decoration:underline;font-weight:800;padding:0}
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-36px;position:relative;padding:0 28px}.card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:22px;border:1px solid #fff}.card h3{margin:6px 0 6px;color:var(--navy);font-size:19px}.card p{margin:0;color:var(--muted)}.ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#fff1d6;font-size:22px}
-.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:8px 0 20px}.sec-head h2{font-size:clamp(28px,4vw,42px);margin:4px 0;color:var(--navy);font-weight:900}.sec-head .hand{font-size:30px;color:var(--orange)}.path{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border-radius:999px;padding:10px 14px;box-shadow:var(--shadow);margin-bottom:24px}.path .st{background:#fff6e5;border-radius:999px;padding:6px 14px;font-weight:900;font-size:13px;color:var(--navy)}.path .ar{color:var(--orange);font-weight:900}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.fl{display:flex;flex-direction:column}.fl .num{width:34px;height:34px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}.fl ul{padding-left:0;list-style:none;margin:10px 0 14px;flex:1}.fl li{padding:4px 0 4px 24px;position:relative;font-size:15px}.fl li:before{content:"";position:absolute;left:2px;top:10px;width:12px;height:8px;border-left:3px solid var(--green);border-bottom:3px solid var(--green);transform:rotate(-45deg)}.fl li.soon{color:var(--muted)}.fl li.soon:before{border-color:#c7c0b2}.tag{display:inline-block;font-size:11px;font-weight:900;padding:2px 8px;border-radius:999px;background:#eef4ff;color:var(--navy2);vertical-align:2px}.tag.ok{background:#e3f6e6;color:var(--green)}.tag.or{background:#ffe7d4;color:#b84b0b}
-.bf-preview{margin-top:24px;display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:stretch}.phases{display:grid;gap:10px}.phase{display:flex;gap:14px;align-items:flex-start;background:#fffaf2;border:1px dashed #f3c58f;border-radius:14px;padding:12px 14px}.phase .n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;display:grid;place-items:center}.phase b{color:var(--navy)}.guarantee{display:flex;gap:16px;align-items:center;background:#fff;border-radius:var(--r);padding:18px 22px;margin-top:24px;box-shadow:var(--shadow);border-left:6px solid var(--green);flex-wrap:wrap}.guarantee .big{font-weight:900;font-size:20px;color:var(--navy)}.cta-bar{margin-top:24px;display:flex;justify-content:center}
-.dash{display:grid;grid-template-columns:240px 1fr;gap:20px}.side{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 70%,#c9663a 130%);border-radius:22px;padding:18px 12px;color:#fff;position:sticky;top:12px;align-self:start}.side .who{display:flex;gap:10px;align-items:center;padding:6px 8px 16px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:10px}.avatar{width:40px;height:40px;border-radius:50%;background:var(--sun);color:var(--navy);display:grid;place-items:center;font-weight:900}.side button{display:flex;gap:10px;align-items:center;width:100%;text-align:left;background:transparent;border:0;color:#e7ecf7;padding:10px 12px;border-radius:12px;font-weight:700}.side button.on{background:linear-gradient(90deg,var(--orange),var(--orange2));color:#fff}.side button:hover:not(.on){background:rgba(255,255,255,.08)}.side .ic{width:22px;text-align:center}.side .foot{font-size:12px;color:#b8c3dc;padding:14px 10px 0}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}.topbar h2{margin:0;font-size:30px;color:var(--navy)}.topbar .hand{font-size:28px;color:var(--orange)}.pill{display:inline-flex;gap:8px;align-items:center;background:#e9f7ec;border:1px solid #bfe5c6;color:#1f6f31;border-radius:999px;padding:6px 12px;font-weight:800;font-size:13px}
-.steps5{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}.s5{background:#fff;border-radius:14px;padding:10px 12px;font-weight:900;color:var(--navy);font-size:14px;display:flex;gap:10px;align-items:center;border:2px solid transparent;cursor:pointer;box-shadow:0 4px 12px -8px rgba(0,0,0,.3)}.s5 .n{width:28px;height:28px;border-radius:50%;background:#eef1f7;display:grid;place-items:center;flex:none}.s5.done .n{background:var(--green);color:#fff}.s5.cur{border-color:var(--orange)}.s5.cur .n{background:var(--orange);color:#fff}.s5 small{display:block;font-weight:700;color:var(--muted);font-size:12px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.next{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.bar{height:10px;background:#eef1f7;border-radius:999px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#6fd17f);border-radius:999px;transition:width .4s}.panel-title{display:flex;align-items:center;gap:10px;margin:0 0 10px}.panel-title h3{margin:0}.muted{color:var(--muted)}.small{font-size:13px}
-.checklist{list-style:none;margin:8px 0 0;padding:0}.checklist li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed var(--line)}.checklist input{margin-top:4px;accent-color:var(--green);width:18px;height:18px}.checklist li.d span{color:var(--muted);text-decoration:line-through}
-label.f{display:block;font-weight:800;font-size:13px;color:var(--navy);margin:10px 0 4px}.inp{width:100%;border:1.5px solid #ddd5c6;border-radius:12px;padding:10px 12px;background:#fffdf9}.inp:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(243,112,33,.15)}textarea.inp{min-height:80px;resize:vertical}.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.6px;padding:8px;border-bottom:2px solid var(--line)}td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}td .inp{padding:6px 8px}.pos{color:var(--green);font-weight:900}.neg{color:#c92a2a;font-weight:900}.best{background:#fff7e6}.status{border-radius:999px;padding:3px 10px;font-weight:800;font-size:12px;border:0}.st-n{background:#eef1f7;color:var(--navy)}.st-p{background:#fff1d6;color:#a2540d}.st-d{background:#e3f6e6;color:var(--green)}.st-x{background:#fde2e2;color:#c92a2a}
-.out{white-space:pre-wrap;background:#14254a;color:#eaf0ff;border-radius:14px;padding:16px;font-size:14px;font-family:ui-monospace,Menlo,Consolas,monospace;max-height:360px;overflow:auto}.city-filter{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}.chip{border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:5px 12px;font-weight:800;font-size:13px}.chip.on{background:var(--navy);color:#fff}.pt{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}.pt .pin{width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:grid;place-items:center;color:#fff;font-weight:900}.pt .pin span{transform:rotate(45deg);font-size:13px}.pin.start{background:#3b82f6}.pin.posao{background:var(--orange)}.pin.skal{background:#8b5cf6}
-.log li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}.log time{color:var(--muted);font-size:12px;margin-right:8px}.note-box{background:repeating-linear-gradient(#fffdf6,#fffdf6 27px,#eadfca 28px);border:1px solid #eadfca;border-radius:12px;padding:6px 12px;line-height:28px;min-height:260px;width:100%;resize:vertical}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--navy);color:#fff;padding:12px 20px;border-radius:999px;font-weight:800;transition:transform .3s;z-index:50}.toast.show{transform:translateX(-50%) translateY(0)}.modal-bg{position:fixed;inset:0;background:rgba(20,37,74,.55);display:none;place-items:center;z-index:40;padding:20px}.modal-bg.on{display:grid}.modal{background:#fff;border-radius:22px;max-width:560px;padding:28px;box-shadow:var(--shadow)}.modal h3{margin-top:0;color:var(--navy)}.hint{background:#eef4ff;border-radius:12px;padding:10px 14px;font-size:14px;color:var(--navy2);margin-top:10px}.warn{background:#fff4e5;border:1px solid #f5c28a;border-left:5px solid var(--orange);border-radius:12px;padding:10px 14px;font-size:14px;color:#6b3a0c;margin:12px 0}.warn b{color:#8a4510}.example-note{background:#f3f0ff;border:1px dashed #a99ae6;border-radius:12px;padding:10px 14px;font-size:14px;color:#3f327a;margin-bottom:16px}.tag.ex{background:#f3f0ff;color:#5a46b8}.inp.bad{border-color:#c92a2a;background:#fff5f5}.inp.bad:focus{box-shadow:0 0 0 3px rgba(201,42,42,.15)}.cond{font-size:12px;font-weight:800;line-height:1.35}.cond.ok{color:var(--green)}.cond.no{color:#c92a2a}.fn{font-size:12px;color:var(--muted);margin-top:8px}.dv{display:none}.dv.on{display:block;animation:fade .3s}.mob-menu{display:none}
-@media(max-width:1000px){.grid4{grid-template-columns:1fr 1fr}.principles{grid-template-columns:1fr;margin-top:-60px;padding:0 12px}.bf-preview{grid-template-columns:1fr}.dash{grid-template-columns:1fr}.side{display:none}.mob-menu{display:block;margin-bottom:12px}.grid3{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.grid4,.grid2,.grid3,.frow{grid-template-columns:1fr}.steps5{grid-template-columns:1fr 1fr}.hero{padding:36px 22px 120px}.wrap{padding:10px 14px 50px}.top{padding:12px 14px}.tbl-wrap{overflow-x:auto}table{min-width:620px}}
+:root{
+  --navy:#14254a; --navy2:#1d3566; --orange:#f37021; --orange2:#ff9a3c; --sun:#ffd86b;
+  --cream:#fff8ee; --sky:#eef4ff; --ink:#1b2236; --muted:#5b6478; --green:#2f9e44; --line:#e8e0d2;
+  --r:18px; --shadow:0 10px 30px -12px rgba(20,37,74,.25);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Nunito,system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff3e0 0%,#fdf7ee 40%,#eef4ff 100%);min-height:100vh;line-height:1.5}
+button{font:inherit;cursor:pointer}
+input,textarea,select{font:inherit;color:inherit}
+.hand{font-family:Caveat,cursive}
+.demo-ribbon{background:var(--navy);color:#fff;font-size:13px;text-align:center;padding:6px 12px;letter-spacing:.3px}
+.demo-ribbon b{color:var(--sun)}
+
+/* top nav */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1240px;margin:0 auto;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);cursor:pointer}
+.logo .mark{font-weight:900;font-size:30px;letter-spacing:-1px;font-style:italic}
+.logo .mark span{color:var(--orange)}
+.logo small{display:block;font-size:12px;color:var(--muted);font-weight:700;line-height:1.1}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav button{background:transparent;border:0;padding:8px 14px;border-radius:999px;font-weight:800;color:var(--navy)}
+.nav button.on{background:var(--navy);color:#fff}
+
+/* trail motif */
+.trail{display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.8px}
+.trail svg{width:34px;height:18px}
+.flag{display:inline-block;width:18px;height:22px;vertical-align:-4px}
+
+.wrap{max-width:1240px;margin:0 auto;padding:10px 24px 60px}
+.view{display:none}
+.view.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* hero */
+.hero{position:relative;border-radius:28px;overflow:hidden;background:
+  radial-gradient(circle at 80% 15%,rgba(255,216,107,.9),transparent 35%),
+  linear-gradient(180deg,#ffe2b8 0%,#ffd1a1 45%,#f6b98a 100%);padding:56px 48px 190px;box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:10px 0 12px;color:var(--navy);font-weight:900}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p.lead{font-size:19px;max-width:620px;color:#3a3020}
+.hero .slogan{font-size:34px;color:var(--navy);margin:14px 0 26px}
+.mountains{position:absolute;left:0;right:0;bottom:0;height:150px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 24px;font-weight:900;font-size:16px;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(90deg,var(--orange),var(--orange2));color:#fff;box-shadow:0 8px 18px -8px rgba(243,112,33,.8)}
+.btn.ghost{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.btn.soft{background:#fff1d6;color:var(--navy)}
+.btn.sm{padding:8px 14px;font-size:14px}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.link{background:none;border:0;color:var(--navy);text-decoration:underline;font-weight:800;padding:0}
+
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-36px;position:relative;padding:0 28px}
+.card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:22px;border:1px solid #fff}
+.card h3{margin:6px 0 6px;color:var(--navy);font-size:19px}
+.card p{margin:0;color:var(--muted)}
+.ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#fff1d6;font-size:22px}
+
+/* free look */
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:8px 0 20px}
+.sec-head h2{font-size:clamp(28px,4vw,42px);margin:4px 0;color:var(--navy);font-weight:900}
+.sec-head .hand{font-size:30px;color:var(--orange)}
+.path{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border-radius:999px;padding:10px 14px;box-shadow:var(--shadow);margin-bottom:24px}
+.path .st{background:#fff6e5;border-radius:999px;padding:6px 14px;font-weight:900;font-size:13px;color:var(--navy)}
+.path .ar{color:var(--orange);font-weight:900}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fl{display:flex;flex-direction:column}
+.fl .num{width:34px;height:34px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}
+.fl ul{padding-left:0;list-style:none;margin:10px 0 14px;flex:1}
+.fl li{padding:4px 0 4px 24px;position:relative;font-size:15px}
+.fl li:before{content:"";position:absolute;left:2px;top:10px;width:12px;height:8px;border-left:3px solid var(--green);border-bottom:3px solid var(--green);transform:rotate(-45deg)}
+.fl li.soon{color:var(--muted)}
+.fl li.soon:before{border-color:#c7c0b2}
+.tag{display:inline-block;font-size:11px;font-weight:900;padding:2px 8px;border-radius:999px;background:#eef4ff;color:var(--navy2);vertical-align:2px}
+.tag.ok{background:#e3f6e6;color:var(--green)}
+.tag.or{background:#ffe7d4;color:#b84b0b}
+
+.bf-preview{margin-top:24px;display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:stretch}
+.phases{display:grid;gap:10px}
+.phase{display:flex;gap:14px;align-items:flex-start;background:#fffaf2;border:1px dashed #f3c58f;border-radius:14px;padding:12px 14px}
+.phase .n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;display:grid;place-items:center}
+.phase b{color:var(--navy)}
+.guarantee{display:flex;gap:16px;align-items:center;background:#fff;border-radius:var(--r);padding:18px 22px;margin-top:24px;box-shadow:var(--shadow);border-left:6px solid var(--green);flex-wrap:wrap}
+.guarantee .big{font-weight:900;font-size:20px;color:var(--navy)}
+.cta-bar{margin-top:24px;display:flex;justify-content:center}
+
+/* dashboard */
+.dash{display:grid;grid-template-columns:240px 1fr;gap:20px}
+.side{background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 70%,#c9663a 130%);border-radius:22px;padding:18px 12px;color:#fff;position:sticky;top:12px;align-self:start}
+.side .who{display:flex;gap:10px;align-items:center;padding:6px 8px 16px;border-bottom:1px solid rgba(255,255,255,.15);margin-bottom:10px}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--sun);color:var(--navy);display:grid;place-items:center;font-weight:900}
+.side button{display:flex;gap:10px;align-items:center;width:100%;text-align:left;background:transparent;border:0;color:#e7ecf7;padding:10px 12px;border-radius:12px;font-weight:700}
+.side button.on{background:linear-gradient(90deg,var(--orange),var(--orange2));color:#fff}
+.side button:hover:not(.on){background:rgba(255,255,255,.08)}
+.side .ic{width:22px;text-align:center}
+.side .foot{font-size:12px;color:#b8c3dc;padding:14px 10px 0}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.topbar h2{margin:0;font-size:30px;color:var(--navy)}
+.topbar .hand{font-size:28px;color:var(--orange)}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#e9f7ec;border:1px solid #bfe5c6;color:#1f6f31;border-radius:999px;padding:6px 12px;font-weight:800;font-size:13px}
+
+.steps5{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.s5{background:#fff;border-radius:14px;padding:10px 12px;font-weight:900;color:var(--navy);font-size:14px;display:flex;gap:10px;align-items:center;border:2px solid transparent;cursor:pointer;box-shadow:0 4px 12px -8px rgba(0,0,0,.3)}
+.s5 .n{width:28px;height:28px;border-radius:50%;background:#eef1f7;display:grid;place-items:center;flex:none}
+.s5.done .n{background:var(--green);color:#fff}
+.s5.cur{border-color:var(--orange)}
+.s5.cur .n{background:var(--orange);color:#fff}
+.s5 small{display:block;font-weight:700;color:var(--muted);font-size:12px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.next{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
+.bar{height:10px;background:#eef1f7;border-radius:999px;overflow:hidden;margin-top:8px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#6fd17f);border-radius:999px;transition:width .4s}
+.panel-title{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+.panel-title h3{margin:0}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+.checklist{list-style:none;margin:8px 0 0;padding:0}
+.checklist li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed var(--line)}
+.checklist input{margin-top:4px;accent-color:var(--green);width:18px;height:18px}
+.checklist li.d span{color:var(--muted);text-decoration:line-through}
+
+label.f{display:block;font-weight:800;font-size:13px;color:var(--navy);margin:10px 0 4px}
+.inp{width:100%;border:1.5px solid #ddd5c6;border-radius:12px;padding:10px 12px;background:#fffdf9}
+.inp:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(243,112,33,.15)}
+textarea.inp{min-height:80px;resize:vertical}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.6px;padding:8px;border-bottom:2px solid var(--line)}
+td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td .inp{padding:6px 8px}
+.pos{color:var(--green);font-weight:900}
+.neg{color:#c92a2a;font-weight:900}
+.best{background:#fff7e6}
+.status{border-radius:999px;padding:3px 10px;font-weight:800;font-size:12px;border:0}
+.st-n{background:#eef1f7;color:var(--navy)}
+.st-p{background:#fff1d6;color:#a2540d}
+.st-d{background:#e3f6e6;color:var(--green)}
+.st-x{background:#fde2e2;color:#c92a2a}
+
+.out{white-space:pre-wrap;background:#14254a;color:#eaf0ff;border-radius:14px;padding:16px;font-size:14px;font-family:ui-monospace,Menlo,Consolas,monospace;max-height:360px;overflow:auto}
+.city-filter{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.chip{border:1.5px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:5px 12px;font-weight:800;font-size:13px}
+.chip.on{background:var(--navy);color:#fff}
+.pt{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.pt .pin{width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:grid;place-items:center;color:#fff;font-weight:900}
+.pt .pin span{transform:rotate(45deg);font-size:13px}
+.pin.start{background:#3b82f6}.pin.posao{background:var(--orange)}.pin.skal{background:#8b5cf6}
+.log li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.log time{color:var(--muted);font-size:12px;margin-right:8px}
+.note-box{background:repeating-linear-gradient(#fffdf6,#fffdf6 27px,#eadfca 28px);border:1px solid #eadfca;border-radius:12px;padding:6px 12px;line-height:28px;min-height:260px;width:100%;resize:vertical}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--navy);color:#fff;padding:12px 20px;border-radius:999px;font-weight:800;transition:transform .3s;z-index:50}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.modal-bg{position:fixed;inset:0;background:rgba(20,37,74,.55);display:none;place-items:center;z-index:40;padding:20px}
+.modal-bg.on{display:grid}
+.modal{background:#fff;border-radius:22px;max-width:560px;padding:28px;box-shadow:var(--shadow)}
+.modal h3{margin-top:0;color:var(--navy)}
+.hint{background:#eef4ff;border-radius:12px;padding:10px 14px;font-size:14px;color:var(--navy2);margin-top:10px}
+.warn{background:#fff4e5;border:1px solid #f5c28a;border-left:5px solid var(--orange);border-radius:12px;padding:10px 14px;font-size:14px;color:#6b3a0c;margin:12px 0}
+.warn b{color:#8a4510}
+.example-note{background:#f3f0ff;border:1px dashed #a99ae6;border-radius:12px;padding:10px 14px;font-size:14px;color:#3f327a;margin-bottom:16px}
+.tag.ex{background:#f3f0ff;color:#5a46b8}
+.inp.bad{border-color:#c92a2a;background:#fff5f5}
+.inp.bad:focus{box-shadow:0 0 0 3px rgba(201,42,42,.15)}
+.cond{font-size:12px;font-weight:800;line-height:1.35}
+.cond.ok{color:var(--green)}
+.cond.no{color:#c92a2a}
+.fn{font-size:12px;color:var(--muted);margin-top:8px}
+.dv{display:none}.dv.on{display:block;animation:fade .3s}
+.mob-menu{display:none}
+
+@media (max-width:1000px){
+  .grid4{grid-template-columns:1fr 1fr}
+  .principles{grid-template-columns:1fr;margin-top:-60px;padding:0 12px}
+  .bf-preview{grid-template-columns:1fr}
+  .dash{grid-template-columns:1fr}
+  .side{display:none}
+  .mob-menu{display:block;margin-bottom:12px}
+  .grid3{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .grid4,.grid2,.grid3,.frow{grid-template-columns:1fr}
+  .steps5{grid-template-columns:1fr 1fr}
+  .hero{padding:36px 22px 120px}
+  .wrap{padding:10px 14px 50px}
+  .top{padding:12px 14px}
+  .tbl-wrap{overflow-x:auto}
+  table{min-width:620px}
+}
 </style>
 </head>
 <body>
+
 <div class="demo-ribbon"><b>DEMO</b> · Radni prikaz ideje 4NOOJ / BUYER FIRST · Svi podaci su izmišljeni · Nema naloga, naplate ni AI integracije</div>
+
 <header class="top">
-<a class="logo" onclick="go('home')"><svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><path d="M2 36 L16 14 L23 24 L28 17 L38 36 Z" fill="#14254a"/><path d="M16 14 L19 19 L13 19 Z" fill="#fff"/><path d="M28 6 V17" stroke="#f37021" stroke-width="2"/><path d="M28 6 L35 8.5 L28 11 Z" fill="#f37021"/></svg><div><div class="mark">4N<span>OO</span>J</div><small>Novi poslovni modeli za stvarne mogućnosti</small></div></a>
-<nav class="nav"><button data-v="home" class="on" onclick="go('home')">Početna</button><button data-v="free" onclick="go('free')">FREE LOOK</button><button data-v="dash" onclick="go('dash')">Radni prostor (demo)</button></nav>
+  <a class="logo" onclick="go('home')">
+    <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><path d="M2 36 L16 14 L23 24 L28 17 L38 36 Z" fill="#14254a"/><path d="M16 14 L19 19 L13 19 Z" fill="#fff"/><path d="M28 6 V17" stroke="#f37021" stroke-width="2"/><path d="M28 6 L35 8.5 L28 11 Z" fill="#f37021"/></svg>
+    <div><div class="mark">4N<span>OO</span>J</div><small>Novi poslovni modeli za stvarne mogućnosti</small></div>
+  </a>
+  <nav class="nav">
+    <button data-v="home" class="on" onclick="go('home')">Početna</button>
+    <button data-v="free" onclick="go('free')">FREE LOOK</button>
+    <button data-v="dash" onclick="go('dash')">Radni prostor (demo)</button>
+  </nav>
 </header>
+
 <main class="wrap">
+
+<!-- ============ POČETNA ============ -->
 <section class="view on" id="v-home">
-<div class="hero"><span class="trail"><svg viewBox="0 0 34 18"><path d="M2 14 Q10 2 18 10 T32 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="3 4" stroke-linecap="round"/></svg>Dobro došli</span><h1>Novi poslovni modeli<br>za <em>stvarne</em> mogućnosti.</h1><p class="lead">4NOOJ ne obećava brzu i laku zaradu. Dobijaš razrađen poslovni model, jasne korake, alate i podršku — a rad, odluke i rezultat su tvoji.</p><div class="slogan hand">Radiš, gradiš, stvaraš svoj poslovni sistem — ne naš.</div><div class="btn-row"><button class="btn primary" onclick="go('free')">Spreman si? Krenimo →</button><button class="link" onclick="openModal()">Šta je naša garancija?</button></div>
-<svg class="mountains" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true"><path d="M0 150 L0 95 L140 40 L260 100 L380 30 L520 105 L660 50 L800 110 L930 45 L1060 100 L1200 60 L1200 150Z" fill="#f2a46f" opacity=".6"/><path d="M0 150 L0 120 L180 70 L330 125 L500 65 L700 130 L880 80 L1050 125 L1200 90 L1200 150Z" fill="#14254a"/><path d="M180 150 C 300 120, 420 140, 560 110 S 820 95, 880 80" fill="none" stroke="#ffd86b" stroke-width="3" stroke-dasharray="6 8"/><path d="M880 80 V52" stroke="#fff" stroke-width="2"/><path d="M880 52 L898 58 L880 64Z" fill="#f37021"/></svg></div>
-<div class="principles"><div class="card"><div class="ico">🧭</div><h3>Polazimo od stvarne potrebe</h3><p>Ne nudimo „ideje za probati“, već modele sa jasnim tržištem, koracima i načinom zarade.</p></div><div class="card"><div class="ico">🪜</div><h3>Korak po korak</h3><p>Operativni program te vodi kroz posao — uvek znaš šta je sledeći korak.</p></div><div class="card"><div class="ico">🤝</div><h3>Podrška, ne zamena za rad</h3><p>Mentorstvo, alati i AI pomoćnik su tu da pomognu, ali posao radiš ti.</p></div></div>
+  <div class="hero">
+    <span class="trail"><svg viewBox="0 0 34 18"><path d="M2 14 Q10 2 18 10 T32 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="3 4" stroke-linecap="round"/></svg>Dobro došli</span>
+    <h1>Novi poslovni modeli<br>za <em>stvarne</em> mogućnosti.</h1>
+    <p class="lead">4NOOJ ne obećava brzu i laku zaradu. Dobijaš razrađen poslovni model, jasne korake, alate i podršku — a rad, odluke i rezultat su tvoji.</p>
+    <div class="slogan hand">Radiš, gradiš, stvaraš svoj poslovni sistem — ne naš.</div>
+    <div class="btn-row">
+      <button class="btn primary" onclick="go('free')">Spreman si? Krenimo →</button>
+      <button class="link" onclick="openModal()">Šta je naša garancija?</button>
+    </div>
+    <svg class="mountains" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 150 L0 95 L140 40 L260 100 L380 30 L520 105 L660 50 L800 110 L930 45 L1060 100 L1200 60 L1200 150Z" fill="#f2a46f" opacity=".6"/>
+      <path d="M0 150 L0 120 L180 70 L330 125 L500 65 L700 130 L880 80 L1050 125 L1200 90 L1200 150Z" fill="#14254a"/>
+      <path d="M180 150 C 300 120, 420 140, 560 110 S 820 95, 880 80" fill="none" stroke="#ffd86b" stroke-width="3" stroke-dasharray="6 8"/>
+      <path d="M880 80 V52" stroke="#fff" stroke-width="2"/><path d="M880 52 L898 58 L880 64Z" fill="#f37021"/>
+    </svg>
+  </div>
+  <div class="principles">
+    <div class="card"><div class="ico">🧭</div><h3>Polazimo od stvarne potrebe</h3><p>Ne nudimo „ideje za probati“, već modele sa jasnim tržištem, koracima i načinom zarade.</p></div>
+    <div class="card"><div class="ico">🪜</div><h3>Korak po korak</h3><p>Operativni program te vodi kroz posao — uvek znaš šta je sledeći korak.</p></div>
+    <div class="card"><div class="ico">🤝</div><h3>Podrška, ne zamena za rad</h3><p>Mentorstvo, alati i AI pomoćnik su tu da pomognu, ali posao radiš ti.</p></div>
+  </div>
 </section>
+
+<!-- ============ FREE LOOK ============ -->
 <section class="view" id="v-free">
-<div class="sec-head"><div><span class="trail"><svg viewBox="0 0 34 18"><path d="M2 14 Q10 2 18 10 T32 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="3 4" stroke-linecap="round"/></svg>Pre odluke</span><h2>FREE LOOK</h2></div><div class="hand">Istraži, razumi, proceni i odluči.</div></div>
-<div class="path"><span class="st">🚪 Ulaz</span><span class="ar">›</span><span class="st">📋 Operativni program</span><span class="ar">›</span><span class="st">🤖 AI podrška</span><span class="ar">›</span><span class="st">👥 Mentorstvo</span><span class="ar">›</span><span class="st">🎛 Personalizacija</span><span class="ar">›</span><span class="st">🚩 Razvoj i skaliranje</span></div>
-<div class="grid4">
-<div class="card fl"><div class="num">1</div><h3>Poslovne prilike</h3><ul><li><b>BUYER FIRST</b> — kupac kao polazna tačka <span class="tag ok">dostupno</span></li><li class="soon">Sledeći modeli — dodaju se tek kad su razrađeni i provereni <span class="tag">uskoro</span></li></ul><button class="btn soft sm" onclick="document.getElementById('bf').scrollIntoView({behavior:'smooth'})">Pogledaj BUYER FIRST ›</button></div>
-<div class="card fl"><div class="num">2</div><h3>Šta možeš da izgradiš?</h3><ul><li>Samozapošljavanje i sopstvena delatnost</li><li>Dodatnu zaradu uz posao</li><li>Novu uslugu u postojećoj ponudi</li><li>Proširenje male ili mikro firme</li></ul></div>
-<div class="card fl"><div class="num">3</div><h3>Šta dobijaš punim pristupom?</h3><ul><li>Operativne programe i predloške</li><li>CITY MAP za tvoj grad</li><li>AI pomoćnika (gotovi upiti)</li><li>Mentorske termine</li></ul><span class="small muted">Cena i uslovi: <i>još se dogovaraju</i></span></div>
-<div class="card fl"><div class="num">4</div><h3>Kako funkcioniše?</h3><ul><li>Biraš smer i pratiš hodogram</li><li>Beležiš šta si uradio/la</li><li>Pratiš ponude i rezultat</li><li>Mentor pomaže kod prepreka</li></ul><button class="btn soft sm" onclick="go('dash')">Probaj radni prostor ›</button></div></div>
-<div class="card bf-preview" id="bf"><div><span class="tag or">Posao #1: Posrednik u nabavci – BUYER FIRST</span><h2 style="margin:8px 0 4px;color:var(--navy);font-size:32px">BUYER FIRST</h2><div class="hand" style="font-size:26px;color:var(--orange)">Prvo kupac, pa proizvod.</div><p>Umesto da prvo tražiš šta da prodaš, nađeš <b>nekoga ko već želi da kupi</b>. Zatim pronađeš ponuđače koji to mogu da isporuče jeftinije od cene koju kupac prihvata, dogovoriš proviziju i spojiš ih.</p><p class="muted small">Primer: kafić traži 40 baštenskih stolica do 45 € po komadu. Nađeš tri proizvođača sa cenom 34–41 €, dogovoriš proviziju i predstaviš ponude kupcu.</p><p class="small"><b>Za koga:</b> ljude koji znaju da koriste računar, telefon i mejl, mogu da istražuju i komuniciraju — i male firme koje žele novu uslugu bez ulaganja.</p></div><div class="phases"><div class="phase"><div class="n">1</div><div><b>Pronađi kupca</b><br><span class="small muted">Ko kupuje, šta tačno, specifikacija, količina i koliko je spreman da plati.</span></div></div><div class="phase"><div class="n">2</div><div><b>Pronađi ponuđače</b><br><span class="small muted">Proizvođači, distributeri, prodavci koji ispunjavaju uslove i imaju nižu cenu.</span></div></div><div class="phase"><div class="n">3</div><div><b>Dogovori proviziju</b><br><span class="small muted">Provizija u predračunu или posebna naknada, pre nego što otkriješ kupca.</span></div></div><div class="phase"><div class="n">4</div><div><b>Spoji kupca i ponuđača</b><br><span class="small muted">Predstavi više ponuda; kupac bira, ti imaš dogovor sa svakim.</span></div></div></div></div>
-<div class="guarantee"><div style="font-size:34px">🛡️</div><div style="flex:1;min-width:240px"><div class="big">Probaj, prati korake i gradi svoj poslovni model.</div><div class="small muted">Uslovna garancija povrata — tačni uslovi se još definišu.</div></div><button class="link" onclick="openModal()">Detalji garancije</button></div><div class="cta-bar"><button class="btn primary" onclick="go('dash')">Uđi u demo radni prostor →</button></div>
+  <div class="sec-head">
+    <div><span class="trail"><svg viewBox="0 0 34 18"><path d="M2 14 Q10 2 18 10 T32 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="3 4" stroke-linecap="round"/></svg>Pre odluke</span>
+    <h2>FREE LOOK</h2></div>
+    <div class="hand">Istraži, razumi, proceni i odluči.</div>
+  </div>
+
+  <div class="path">
+    <span class="st">🚪 Ulaz</span><span class="ar">›</span>
+    <span class="st">📋 Operativni program</span><span class="ar">›</span>
+    <span class="st">🤖 AI podrška</span><span class="ar">›</span>
+    <span class="st">👥 Mentorstvo</span><span class="ar">›</span>
+    <span class="st">🎛 Personalizacija</span><span class="ar">›</span>
+    <span class="st">🚩 Razvoj i skaliranje</span>
+  </div>
+
+  <div class="grid4">
+    <div class="card fl"><div class="num">1</div><h3>Poslovne prilike</h3>
+      <ul><li><b>BUYER FIRST</b> — kupac kao polazna tačka <span class="tag ok">dostupno</span></li>
+      <li class="soon">Sledeći modeli — dodaju se tek kad su razrađeni i provereni <span class="tag">uskoro</span></li></ul>
+      <button class="btn soft sm" onclick="document.getElementById('bf').scrollIntoView({behavior:'smooth'})">Pogledaj BUYER FIRST ›</button></div>
+    <div class="card fl"><div class="num">2</div><h3>Šta možeš da izgradiš?</h3>
+      <ul><li>Samozapošljavanje i sopstvena delatnost</li><li>Dodatnu zaradu uz posao</li><li>Novu uslugu u postojećoj ponudi</li><li>Proširenje male ili mikro firme</li></ul></div>
+    <div class="card fl"><div class="num">3</div><h3>Šta dobijaš punim pristupom?</h3>
+      <ul><li>Operativne programe i predloške</li><li>CITY MAP za tvoj grad</li><li>AI pomoćnika (gotovi upiti)</li><li>Mentorske termine</li></ul>
+      <span class="small muted">Cena i uslovi: <i>još se dogovaraju</i></span></div>
+    <div class="card fl"><div class="num">4</div><h3>Kako funkcioniše?</h3>
+      <ul><li>Biraš smer i pratiš hodogram</li><li>Beležiš šta si uradio/la</li><li>Pratiš ponude i rezultat</li><li>Mentor pomaže kod prepreka</li></ul>
+      <button class="btn soft sm" onclick="go('dash')">Probaj radni prostor ›</button></div>
+  </div>
+
+  <div class="card bf-preview" id="bf">
+    <div>
+      <span class="tag or">Posao #1: Posrednik u nabavci – BUYER FIRST</span>
+      <h2 style="margin:8px 0 4px;color:var(--navy);font-size:32px">BUYER FIRST</h2>
+      <div class="hand" style="font-size:26px;color:var(--orange)">Prvo kupac, pa proizvod.</div>
+      <p>Umesto da prvo tražiš šta da prodaš, nađeš <b>nekoga ko već želi da kupi</b>. Zatim pronađeš ponuđače koji to mogu da isporuče jeftinije od cene koju kupac prihvata, dogovoriš proviziju i spojiš ih.</p>
+      <p class="muted small">Primer: kafić traži 40 baštenskih stolica do 45 € po komadu. Nađeš tri proizvođača sa cenom 34–41 €, dogovoriš proviziju i predstaviš ponude kupcu.</p>
+      <p class="small"><b>Za koga:</b> ljude koji znaju da koriste računar, telefon i mejl, mogu da istražuju i komuniciraju — i male firme koje žele novu uslugu bez ulaganja.</p>
+    </div>
+    <div class="phases">
+      <div class="phase"><div class="n">1</div><div><b>Pronađi kupca</b><br><span class="small muted">Ko kupuje, šta tačno, specifikacija, količina i koliko je spreman da plati.</span></div></div>
+      <div class="phase"><div class="n">2</div><div><b>Pronađi ponuđače</b><br><span class="small muted">Proizvođači, distributeri, prodavci koji ispunjavaju uslove i imaju nižu cenu.</span></div></div>
+      <div class="phase"><div class="n">3</div><div><b>Dogovori proviziju</b><br><span class="small muted">Provizija u predračunu ili posebna naknada, pre nego što otkriješ kupca.</span></div></div>
+      <div class="phase"><div class="n">4</div><div><b>Spoji kupca i ponuđača</b><br><span class="small muted">Predstavi više ponuda; kupac bira, ti imaš dogovor sa svakim.</span></div></div>
+    </div>
+  </div>
+
+  <div class="guarantee">
+    <div style="font-size:34px">🛡️</div>
+    <div style="flex:1;min-width:240px"><div class="big">Probaj, prati korake i gradi svoj poslovni model.</div>
+      <div class="small muted">Uslovna garancija povrata — tačni uslovi se još definišu.</div></div>
+    <button class="link" onclick="openModal()">Detalji garancije</button>
+  </div>
+
+  <div class="cta-bar"><button class="btn primary" onclick="go('dash')">Uđi u demo radni prostor →</button></div>
 </section>
-<section class="view" id="v-dash"><div class="dash">
-<aside class="side"><div class="who"><div class="avatar">AM</div><div><b>Ana M.</b><br><span class="small" style="color:#b8c3dc">demo korisnik</span></div></div><button data-d="pregled" class="on"><span class="ic">🏠</span>Moj 4NOOJ</button><button data-d="kupac"><span class="ic">🎯</span>1. Kupac</button><button data-d="ponude"><span class="ic">📦</span>2. Ponuđači</button><button data-d="provizija"><span class="ic">🤝</span>3. Provizija</button><button data-d="spajanje"><span class="ic">🔗</span>4. Spajanje</button><button data-d="city"><span class="ic">📍</span>CITY MAP</button><button data-d="ai"><span class="ic">🤖</span>AI pomoćnik</button><button data-d="notes"><span class="ic">📓</span>My Notebook</button><button data-d="log"><span class="ic">🗂</span>Moja aktivnost</button><button data-d="mentor"><span class="ic">👥</span>Mentorstvo</button><div class="foot">Podaci se čuvaju samo u ovom pregledaču (demo).</div></aside>
-<div><select class="inp mob-menu" id="mobMenu" onchange="dgo(this.value)"><option value="pregled">🏠 Moj 4NOOJ</option><option value="kupac">🎯 1. Kupac</option><option value="ponude">📦 2. Ponuđači</option><option value="provizija">🤝 3. Provizija</option><option value="spajanje">🔗 4. Spajanje</option><option value="city">📍 CITY MAP</option><option value="ai">🤖 AI pomoćnik</option><option value="notes">📓 My Notebook</option><option value="log">🗂 Moja aktivnost</option><option value="mentor">👥 Mentorstvo</option></select>
-<div class="topbar"><div><span class="hand">Tvoj poslovni centar</span><h2 id="dealTitle">BUYER FIRST</h2></div><div class="btn-row"><span class="pill">✔ Demo pristup</span><button class="btn soft sm" onclick="resetDemo()">↺ Vrati primer</button></div></div>
-<div class="hint" style="margin:0 0 12px">Ana traži način da ostvari dodatni prihod. Izabrala je BUYER FIRST – posao u kome pronalazi firmu koja nešto želi da kupi, zatim odgovarajućeg ponuđača i ostvaruje proviziju ako se posao realizuje. Ovo je njen prvi primer.</div>
-<div class="example-note">🧪 <b>Izmišljeni primer.</b> Kupac, ponuđači, cene, dogovori o proviziji, beleške i aktivnosti koji su unapred popunjeni služe samo za demonstraciju — ne odnose se na stvarne firme ni stvarne poslove. Sličnost naziva sa postojećim firmama je slučajna.</div><div class="steps5" id="steps5"></div>
-<div class="dv on" id="d-pregled"><div class="card next"><div style="flex:1;min-width:240px"><div class="panel-title"><span style="font-size:22px">🚩</span><h3>Sledeći korak</h3></div><div id="nextTxt" style="font-weight:800;color:var(--navy)"></div><div class="bar"><i id="nextBar"></i></div><div class="small muted" id="nextPct" style="margin-top:4px"></div></div><button class="btn primary" onclick="continueWork()">Nastavi rad ›</button></div>
-<div class="grid3" style="margin-top:16px"><div class="card"><div class="muted small">Kupac</div><div style="font-weight:900;font-size:18px;color:var(--navy)" id="kBuyer"></div><div class="small" id="kNeed"></div></div><div class="card"><div class="muted small">Ponude koje ispunjavaju uslove</div><div style="font-weight:900;font-size:30px;color:var(--navy)" id="kOffers"></div><div class="small muted" id="kBest"></div></div><div class="card"><div class="muted small">Moguća provizija — zbir dogovorenih</div><div style="font-weight:900;font-size:30px;color:var(--green)" id="kEarn"></div><div class="small muted" id="kEarnSub">nije zagarantovano</div></div></div>
-<div class="warn">⚠️ <b>Provizija nije zagarantovana.</b> Iznos postaje stvaran tek kada postoji <b>pisani dogovor</b> sa ponuđačem (mejl, ugovor ili predračun) i kada je <b>posao realizovan</b> — kupac kupio i platio. Do tada su ovo samo moguće vrednosti.</div>
-<div class="grid2" style="margin-top:16px"><div class="card"><div class="panel-title"><span>📍</span><h3>CITY MAP</h3></div><p class="muted">Ilustrativni spisak mesta gde se mogu tražiti kupci i ponuđači — podeljen na start, posao i skaliranje. Nije geografska mapa.</p><button class="btn soft sm" onclick="dgo('city')">Otvori ›</button></div><div class="card"><div class="panel-title"><span>🤖</span><h3>AI pomoćnik</h3></div><p class="muted">Gotovi upiti, popunjeni tvojim podacima — kopiraš ih u besplatni ChatGPT ili Claude.</p><button class="btn soft sm" onclick="dgo('ai')">Pokreni ›</button></div></div></div>
-<div class="dv" id="d-kupac"><div class="grid2"><div class="card"><div class="panel-title"><span>🎯</span><h3>Faza 1 · Kupac i potreba</h3></div><label class="f">Kupac (firma ili osoba)</label><input class="inp" data-b="buyer"><label class="f">Šta traži</label><input class="inp" data-b="item"><label class="f">Specifikacija / uslovi</label><textarea class="inp" data-b="spec"></textarea><div class="frow"><div><label class="f">Količina</label><input class="inp" type="number" min="1" data-b="qty"></div><div><label class="f">Max cena po komadu (€)</label><input class="inp" type="number" min="0" step="0.5" data-b="maxPrice"></div></div><div class="frow"><div><label class="f">Rok</label><input class="inp" data-b="deadline"></div><div><label class="f">Kako je pronađen</label><input class="inp" data-b="source"></div></div><label class="f">Najduži prihvatljiv rok isporuke (dana)</label><input class="inp" type="number" min="1" step="1" data-b="maxDays"><div class="hint">Budžet kupca: <b id="budget"></b><br>Uslovi kupca za ponude: cena najviše <b id="condPrice"></b>, isporuka najviše <b id="condDays"></b>, ispunjena specifikacija.</div></div><div class="card"><div class="panel-title"><span>📋</span><h3>Hodogram faze 1</h3></div><ul class="checklist" data-phase="0"></ul></div></div></div>
-<div class="dv" id="d-ponude"><div class="card"><div class="panel-title"><span>📦</span><h3>Faza 2 · Ponuđači</h3></div><p class="muted small" style="margin-top:0">Upiši ponude koje si našao/la. Najbolja ponuda ⭐ je najjeftinija među onima koje ispunjavaju sve uslove kupca (cena, rok isporuke, specifikacija); kod iste cene prednost ima kraći rok.</p><div class="tbl-wrap"><table><thead><tr><th>Ponuđač</th><th>Grad</th><th>Cena/kom €</th><th>Isporuka (dana)</th><th>Ispunjava spec.</th><th>Uslovi kupca</th><th>Ušteda kupca*</th><th></th></tr></thead><tbody id="offerRows"></tbody></table></div><div class="fn">* <b>Ušteda kupca</b> = koliko je ponuda ispod maksimalne cene kupca. To <b>nije tvoja zarada</b>. Tvoja zarada je samo provizija koju dogovoriš sa ponuđačem u fazi 3.</div><button class="btn soft sm" style="margin-top:12px" onclick="addOffer()">+ Dodaj ponuđača</button></div><div class="card" style="margin-top:16px"><div class="panel-title"><span>📋</span><h3>Hodogram faze 2</h3></div><ul class="checklist" data-phase="1"></ul></div></div>
-<div class="dv" id="d-provizija"><div class="card"><div class="panel-title"><span>🤝</span><h3>Faza 3 · Dogovor provizije</h3></div><p class="muted small" style="margin-top:0">Za svaku ponudu koja ispunjava uslove kupca dogovori proviziju pre nego što otkriješ kupca. Procenat mora biti veći od 0 i najviše 100; fiksni iznos ne može biti negativan.</p><div class="warn">⚠️ <b>Provizija nije zagarantovana</b> dok ne postoji pisani dogovor sa ponuđačem i dok posao nije realizovan. Status „Dogovoreno“ znači samo da je dogovor postignut — ne i da je novac zarađen.</div><div class="tbl-wrap"><table><thead><tr><th>Ponuđač</th><th>Vrednost posla</th><th>Model</th><th>Iznos</th><th>Moguća provizija</th><th>Status</th></tr></thead><tbody id="commRows"></tbody></table></div></div><div class="card" style="margin-top:16px"><div class="panel-title"><span>📋</span><h3>Hodogram faze 3</h3></div><ul class="checklist" data-phase="2"></ul></div></div>
-<div class="dv" id="d-spajanje"><div class="grid2"><div class="card"><div class="panel-title"><span>🔗</span><h3>Faza 4 · Predstavljanje ponuda kupcu</h3></div><p class="muted small" style="margin-top:0">Poruka se sama sastavlja od ponuda sa statusom „Dogovoreno“. Proveri je, prilagodi i pošalji iz svog mejla.</p><div class="out" id="introMsg"></div><div class="warn">⚠️ Kupac obično bira <b>jednu</b> ponudu. Tvoja stvarna zarada je samo provizija za ponudu koju kupac prihvati i plati — i to tek kada postoji pisani dogovor sa tim ponuđačem.</div><div class="btn-row" style="margin-top:12px"><button class="btn primary sm" onclick="copyEl('introMsg')">Kopiraj poruku</button></div></div><div class="card"><div class="panel-title"><span>📋</span><h3>Hodogram faze 4</h3></div><ul class="checklist" data-phase="3"></ul><label class="f" style="margin-top:16px">Ishod posla</label><select class="inp" data-b="outcome"><option>U toku</option><option>Kupac prihvatio ponudu</option><option>Kupac odustao</option><option>Odloženo</option></select></div></div></div>
-<div class="dv" id="d-city"><div class="card"><div class="panel-title"><span>📍</span><h3>CITY MAP · Beograd <span class="tag ex">ilustrativni spisak</span></h3></div><div class="example-note">📋 <b>Ovo nije geografska mapa niti stvarno istraživanje tržišta.</b> Ovo je ilustrativni spisak od 9 izmišljenih primera, da se vidi kako bi tačke bile organizovane (u punoj verziji ~120 tačaka po gradu). Podaci nisu provereni.</div><div class="city-filter" id="cityFilter"><button class="chip on" data-c="all">Sve</button><button class="chip" data-c="start">Start</button><button class="chip" data-c="posao">Posao</button><button class="chip" data-c="skal">Skaliranje</button></div><div id="cityList"></div><div class="hint">U pravoj verziji tačke priprema Value Connect (tabela), a sajt ih samo prikazuje — bez skupih API istraživanja.</div></div></div>
-<div class="dv" id="d-ai"><div class="card"><div class="panel-title"><span>🤖</span><h3>AI pomoćnik · gotovi upiti</h3></div><p class="muted small" style="margin-top:0">Bez API troškova: izaberi zadatak, upit se popuni podacima iz tvog posla, kopiraš ga u besplatni AI chat.</p><select class="inp" id="aiTask" onchange="renderAI()"><option value="find">Gde da tražim ponuđače za ovaj proizvod?</option><option value="rfq">Napiši upit ponuđaču (bez otkrivanja kupca)</option><option value="comm">Kako da predložim proviziju ponuđaču?</option><option value="buyers">Gde da tražim nove kupce u mom gradu?</option></select><div class="out" id="aiOut" style="margin-top:12px"></div><div class="btn-row" style="margin-top:12px"><button class="btn primary sm" onclick="copyEl('aiOut')">Kopiraj upit</button><span class="small muted">Zalepi ga u ChatGPT, Claude ili sličan alat.</span></div></div></div>
-<div class="dv" id="d-notes"><div class="card"><div class="panel-title"><span>📓</span><h3>My Notebook <span class="tag">privatno</span> <span class="tag ex">primer beleške</span></h3></div><p class="muted small" style="margin-top:0">Slobodne beleške — ideje, pitanja, prepreke. Mentor ih ne vidi automatski.</p><textarea class="note-box" data-b="notes"></textarea></div></div>
-<div class="dv" id="d-log"><div class="card"><div class="panel-title"><span>🗂</span><h3>Moja aktivnost</h3></div><p class="muted small" style="margin-top:0">Šta je stvarno urađeno — upisuje se kad označiš korak, dodaš ponudu ili promeniš status. Stavke označene sa „primer“ su izmišljene.</p><ul class="log" id="logList" style="list-style:none;padding:0;margin:0"></ul></div></div>
-<div class="dv" id="d-mentor"><div class="card"><div class="panel-title"><span>👥</span><h3>Mentorstvo</h3></div><p>Uključena su <b>3 termina</b> (primer). U demou dugme samo pokazuje tok — u prvoj pravoj verziji vodi na besplatan kalendar za zakazivanje.</p><div class="grid3"><div class="card" style="box-shadow:none;border:1px solid var(--line)"><b>Termin 1</b><div class="small muted">Odabir smera i prvi kupac</div><span class="tag ok">iskorišćen</span> <span class="tag ex">primer</span></div><div class="card" style="box-shadow:none;border:1px solid var(--line)"><b>Termin 2</b><div class="small muted">Pregovori o proviziji</div><span class="tag">slobodan</span></div><div class="card" style="box-shadow:none;border:1px solid var(--line)"><b>Termin 3</b><div class="small muted">Rezultat i sledeći kupac</div><span class="tag">slobodan</span></div></div><button class="btn primary" style="margin-top:16px" onclick="toast('Demo: ovde bi se otvorio kalendar za zakazivanje')">Zakaži termin ›</button></div></div>
-</div></div></section>
+
+<!-- ============ DASHBOARD ============ -->
+<section class="view" id="v-dash">
+<div class="dash">
+  <aside class="side">
+    <div class="who"><div class="avatar">AM</div><div><b>Ana M.</b><br><span class="small" style="color:#b8c3dc">demo korisnik</span></div></div>
+    <button data-d="pregled" class="on"><span class="ic">🏠</span>Moj 4NOOJ</button>
+    <button data-d="kupac"><span class="ic">🎯</span>1. Kupac</button>
+    <button data-d="ponude"><span class="ic">📦</span>2. Ponuđači</button>
+    <button data-d="provizija"><span class="ic">🤝</span>3. Provizija</button>
+    <button data-d="spajanje"><span class="ic">🔗</span>4. Spajanje</button>
+    <button data-d="city"><span class="ic">📍</span>CITY MAP</button>
+    <button data-d="ai"><span class="ic">🤖</span>AI pomoćnik</button>
+    <button data-d="notes"><span class="ic">📓</span>My Notebook</button>
+    <button data-d="log"><span class="ic">🗂</span>Moja aktivnost</button>
+    <button data-d="mentor"><span class="ic">👥</span>Mentorstvo</button>
+    <div class="foot">Podaci se čuvaju samo u ovom pregledaču (demo).</div>
+  </aside>
+
+  <div>
+    <select class="inp mob-menu" id="mobMenu" onchange="dgo(this.value)">
+      <option value="pregled">🏠 Moj 4NOOJ</option><option value="kupac">🎯 1. Kupac</option><option value="ponude">📦 2. Ponuđači</option>
+      <option value="provizija">🤝 3. Provizija</option><option value="spajanje">🔗 4. Spajanje</option><option value="city">📍 CITY MAP</option>
+      <option value="ai">🤖 AI pomoćnik</option><option value="notes">📓 My Notebook</option><option value="log">🗂 Moja aktivnost</option><option value="mentor">👥 Mentorstvo</option>
+    </select>
+
+    <div class="topbar">
+      <div><span class="hand">Tvoj poslovni centar</span><h2 id="dealTitle">BUYER FIRST</h2></div>
+      <div class="btn-row"><span class="pill">✔ Demo pristup</span><button class="btn soft sm" onclick="resetDemo()">↺ Vrati primer</button></div>
+    </div>
+
+    <div class="hint" style="margin:0 0 12px">Ana traži način da ostvari dodatni prihod. Izabrala je BUYER FIRST – posao u kome pronalazi firmu koja nešto želi da kupi, zatim odgovarajućeg ponuđača i ostvaruje proviziju ako se posao realizuje. Ovo je njen prvi primer.</div>
+
+    <div class="example-note">🧪 <b>Izmišljeni primer.</b> Kupac, ponuđači, cene, dogovori o proviziji, beleške i aktivnosti koji su unapred popunjeni služe samo za demonstraciju — ne odnose se na stvarne firme ni stvarne poslove. Sličnost naziva sa postojećim firmama je slučajna.</div>
+
+    <div class="steps5" id="steps5"></div>
+
+    <!-- pregled -->
+    <div class="dv on" id="d-pregled">
+      <div class="card next">
+        <div style="flex:1;min-width:240px">
+          <div class="panel-title"><span style="font-size:22px">🚩</span><h3>Sledeći korak</h3></div>
+          <div id="nextTxt" style="font-weight:800;color:var(--navy)"></div>
+          <div class="bar"><i id="nextBar"></i></div>
+          <div class="small muted" id="nextPct" style="margin-top:4px"></div>
+        </div>
+        <button class="btn primary" onclick="continueWork()">Nastavi rad ›</button>
+      </div>
+      <div class="grid3" style="margin-top:16px">
+        <div class="card"><div class="muted small">Kupac</div><div style="font-weight:900;font-size:18px;color:var(--navy)" id="kBuyer"></div><div class="small" id="kNeed"></div></div>
+        <div class="card"><div class="muted small">Ponude koje ispunjavaju uslove</div><div style="font-weight:900;font-size:30px;color:var(--navy)" id="kOffers"></div><div class="small muted" id="kBest"></div></div>
+        <div class="card"><div class="muted small">Moguća provizija — zbir dogovorenih</div><div style="font-weight:900;font-size:30px;color:var(--green)" id="kEarn"></div><div class="small muted" id="kEarnSub">nije zagarantovano</div></div>
+      </div>
+      <div class="warn">⚠️ <b>Provizija nije zagarantovana.</b> Iznos postaje stvaran tek kada postoji <b>pisani dogovor</b> sa ponuđačem (mejl, ugovor ili predračun) i kada je <b>posao realizovan</b> — kupac kupio i platio. Do tada su ovo samo moguće vrednosti.</div>
+      <div class="grid2" style="margin-top:16px">
+        <div class="card"><div class="panel-title"><span>📍</span><h3>CITY MAP</h3></div><p class="muted">Ilustrativni spisak mesta gde se mogu tražiti kupci i ponuđači — podeljen na start, posao i skaliranje. Nije geografska mapa.</p><button class="btn soft sm" onclick="dgo('city')">Otvori ›</button></div>
+        <div class="card"><div class="panel-title"><span>🤖</span><h3>AI pomoćnik</h3></div><p class="muted">Gotovi upiti, popunjeni tvojim podacima — kopiraš ih u besplatni ChatGPT ili Claude.</p><button class="btn soft sm" onclick="dgo('ai')">Pokreni ›</button></div>
+      </div>
+    </div>
+
+    <!-- 1 kupac -->
+    <div class="dv" id="d-kupac">
+      <div class="grid2">
+        <div class="card">
+          <div class="panel-title"><span>🎯</span><h3>Faza 1 · Kupac i potreba</h3></div>
+          <label class="f">Kupac (firma ili osoba)</label><input class="inp" data-b="buyer">
+          <label class="f">Šta traži</label><input class="inp" data-b="item">
+          <label class="f">Specifikacija / uslovi</label><textarea class="inp" data-b="spec"></textarea>
+          <div class="frow">
+            <div><label class="f">Količina</label><input class="inp" type="number" min="1" data-b="qty"></div>
+            <div><label class="f">Max cena po komadu (€)</label><input class="inp" type="number" min="0" step="0.5" data-b="maxPrice"></div>
+          </div>
+          <div class="frow">
+            <div><label class="f">Rok</label><input class="inp" data-b="deadline"></div>
+            <div><label class="f">Kako je pronađen</label><input class="inp" data-b="source"></div>
+          </div>
+          <label class="f">Najduži prihvatljiv rok isporuke (dana)</label><input class="inp" type="number" min="1" step="1" data-b="maxDays">
+          <div class="hint">Budžet kupca: <b id="budget"></b><br>Uslovi kupca za ponude: cena najviše <b id="condPrice"></b>, isporuka najviše <b id="condDays"></b>, ispunjena specifikacija.</div>
+        </div>
+        <div class="card"><div class="panel-title"><span>📋</span><h3>Hodogram faze 1</h3></div><ul class="checklist" data-phase="0"></ul></div>
+      </div>
+    </div>
+
+    <!-- 2 ponude -->
+    <div class="dv" id="d-ponude">
+      <div class="card">
+        <div class="panel-title"><span>📦</span><h3>Faza 2 · Ponuđači</h3></div>
+        <p class="muted small" style="margin-top:0">Upiši ponude koje si našao/la. Najbolja ponuda ⭐ je najjeftinija među onima koje ispunjavaju sve uslove kupca (cena, rok isporuke, specifikacija); kod iste cene prednost ima kraći rok.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Ponuđač</th><th>Grad</th><th>Cena/kom €</th><th>Isporuka (dana)</th><th>Ispunjava spec.</th><th>Uslovi kupca</th><th>Ušteda kupca*</th><th></th></tr></thead>
+          <tbody id="offerRows"></tbody>
+        </table></div>
+        <div class="fn">* <b>Ušteda kupca</b> = koliko je ponuda ispod maksimalne cene kupca. To <b>nije tvoja zarada</b>. Tvoja zarada je samo provizija koju dogovoriš sa ponuđačem u fazi 3.</div>
+        <button class="btn soft sm" style="margin-top:12px" onclick="addOffer()">+ Dodaj ponuđača</button>
+      </div>
+      <div class="card" style="margin-top:16px"><div class="panel-title"><span>📋</span><h3>Hodogram faze 2</h3></div><ul class="checklist" data-phase="1"></ul></div>
+    </div>
+
+    <!-- 3 provizija -->
+    <div class="dv" id="d-provizija">
+      <div class="card">
+        <div class="panel-title"><span>🤝</span><h3>Faza 3 · Dogovor provizije</h3></div>
+        <p class="muted small" style="margin-top:0">Za svaku ponudu koja ispunjava uslove kupca dogovori proviziju pre nego što otkriješ kupca. Procenat mora biti veći od 0 i najviše 100; fiksni iznos ne može biti negativan.</p>
+        <div class="warn">⚠️ <b>Provizija nije zagarantovana</b> dok ne postoji pisani dogovor sa ponuđačem i dok posao nije realizovan. Status „Dogovoreno“ znači samo da je dogovor postignut — ne i da je novac zarađen.</div>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Ponuđač</th><th>Vrednost posla</th><th>Model</th><th>Iznos</th><th>Moguća provizija</th><th>Status</th></tr></thead>
+          <tbody id="commRows"></tbody>
+        </table></div>
+      </div>
+      <div class="card" style="margin-top:16px"><div class="panel-title"><span>📋</span><h3>Hodogram faze 3</h3></div><ul class="checklist" data-phase="2"></ul></div>
+    </div>
+
+    <!-- 4 spajanje -->
+    <div class="dv" id="d-spajanje">
+      <div class="grid2">
+        <div class="card">
+          <div class="panel-title"><span>🔗</span><h3>Faza 4 · Predstavljanje ponuda kupcu</h3></div>
+          <p class="muted small" style="margin-top:0">Poruka se sama sastavlja od ponuda sa statusom „Dogovoreno“. Proveri je, prilagodi i pošalji iz svog mejla.</p>
+          <div class="out" id="introMsg"></div>
+          <div class="warn">⚠️ Kupac obično bira <b>jednu</b> ponudu. Tvoja stvarna zarada je samo provizija za ponudu koju kupac prihvati i plati — i to tek kada postoji pisani dogovor sa tim ponuđačem.</div>
+          <div class="btn-row" style="margin-top:12px"><button class="btn primary sm" onclick="copyEl('introMsg')">Kopiraj poruku</button></div>
+        </div>
+        <div class="card"><div class="panel-title"><span>📋</span><h3>Hodogram faze 4</h3></div><ul class="checklist" data-phase="3"></ul>
+          <label class="f" style="margin-top:16px">Ishod posla</label>
+          <select class="inp" data-b="outcome"><option>U toku</option><option>Kupac prihvatio ponudu</option><option>Kupac odustao</option><option>Odloženo</option></select>
+        </div>
+      </div>
+    </div>
+
+    <!-- city -->
+    <div class="dv" id="d-city">
+      <div class="card">
+        <div class="panel-title"><span>📍</span><h3>CITY MAP · Beograd <span class="tag ex">ilustrativni spisak</span></h3></div>
+        <div class="example-note">📋 <b>Ovo nije geografska mapa niti stvarno istraživanje tržišta.</b> Ovo je ilustrativni spisak od 9 izmišljenih primera, da se vidi kako bi tačke bile organizovane (u punoj verziji ~120 tačaka po gradu). Podaci nisu provereni.</div>
+        <div class="city-filter" id="cityFilter">
+          <button class="chip on" data-c="all">Sve</button><button class="chip" data-c="start">Start</button><button class="chip" data-c="posao">Posao</button><button class="chip" data-c="skal">Skaliranje</button>
+        </div>
+        <div id="cityList"></div>
+        <div class="hint">U pravoj verziji tačke priprema Value Connect (tabela), a sajt ih samo prikazuje — bez skupih API istraživanja.</div>
+      </div>
+    </div>
+
+    <!-- ai -->
+    <div class="dv" id="d-ai">
+      <div class="card">
+        <div class="panel-title"><span>🤖</span><h3>AI pomoćnik · gotovi upiti</h3></div>
+        <p class="muted small" style="margin-top:0">Bez API troškova: izaberi zadatak, upit se popuni podacima iz tvog posla, kopiraš ga u besplatni AI chat.</p>
+        <select class="inp" id="aiTask" onchange="renderAI()">
+          <option value="find">Gde da tražim ponuđače za ovaj proizvod?</option>
+          <option value="rfq">Napiši upit ponuđaču (bez otkrivanja kupca)</option>
+          <option value="comm">Kako da predložim proviziju ponuđaču?</option>
+          <option value="buyers">Gde da tražim nove kupce u mom gradu?</option>
+        </select>
+        <div class="out" id="aiOut" style="margin-top:12px"></div>
+        <div class="btn-row" style="margin-top:12px"><button class="btn primary sm" onclick="copyEl('aiOut')">Kopiraj upit</button><span class="small muted">Zalepi ga u ChatGPT, Claude ili sličan alat.</span></div>
+      </div>
+    </div>
+
+    <!-- notes -->
+    <div class="dv" id="d-notes">
+      <div class="card">
+        <div class="panel-title"><span>📓</span><h3>My Notebook <span class="tag">privatno</span> <span class="tag ex">primer beleške</span></h3></div>
+        <p class="muted small" style="margin-top:0">Slobodne beleške — ideje, pitanja, prepreke. Mentor ih ne vidi automatski.</p>
+        <textarea class="note-box" data-b="notes"></textarea>
+      </div>
+    </div>
+
+    <!-- log -->
+    <div class="dv" id="d-log">
+      <div class="card">
+        <div class="panel-title"><span>🗂</span><h3>Moja aktivnost</h3></div>
+        <p class="muted small" style="margin-top:0">Šta je stvarno urađeno — upisuje se kad označiš korak, dodaš ponudu ili promeniš status. Stavke označene sa „primer“ su izmišljene.</p>
+        <ul class="log" id="logList" style="list-style:none;padding:0;margin:0"></ul>
+      </div>
+    </div>
+
+    <!-- mentor -->
+    <div class="dv" id="d-mentor">
+      <div class="card">
+        <div class="panel-title"><span>👥</span><h3>Mentorstvo</h3></div>
+        <p>Uključena su <b>3 termina</b> (primer). U demou dugme samo pokazuje tok — u prvoj pravoj verziji vodi na besplatan kalendar za zakazivanje.</p>
+        <div class="grid3">
+          <div class="card" style="box-shadow:none;border:1px solid var(--line)"><b>Termin 1</b><div class="small muted">Odabir smera i prvi kupac</div><span class="tag ok">iskorišćen</span> <span class="tag ex">primer</span></div>
+          <div class="card" style="box-shadow:none;border:1px solid var(--line)"><b>Termin 2</b><div class="small muted">Pregovori o proviziji</div><span class="tag">slobodan</span></div>
+          <div class="card" style="box-shadow:none;border:1px solid var(--line)"><b>Termin 3</b><div class="small muted">Rezultat i sledeći kupac</div><span class="tag">slobodan</span></div>
+        </div>
+        <button class="btn primary" style="margin-top:16px" onclick="toast('Demo: ovde bi se otvorio kalendar za zakazivanje')">Zakaži termin ›</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 </main>
-<div class="modal-bg" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal"><h3>🛡️ Šta je naša garancija?</h3><p>Garancija <b>nije obećanje zarade</b>. To je uslovni povrat uloga: ako korisnik u 90 dana ispuni unapred objavljene uslove aktivnosti, a ne ostvari definisan minimalni rezultat, ima pravo na povrat.</p><p class="muted small">U demou je ovo samo mesto za tekst. Tačne uslove, evidenciju aktivnosti i ko snosi povrat treba prvo dogovoriti.</p><button class="btn primary sm" onclick="closeModal()">Razumem</button></div></div><div class="toast" id="toast"></div>
+
+<div class="modal-bg" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <h3>🛡️ Šta je naša garancija?</h3>
+    <p>Garancija <b>nije obećanje zarade</b>. To je uslovni povrat uloga: ako korisnik u 90 dana ispuni unapred objavljene uslove aktivnosti, a ne ostvari definisan minimalni rezultat, ima pravo na povrat.</p>
+    <p class="muted small">U demou je ovo samo mesto za tekst. Tačne uslove, evidenciju aktivnosti i ko snosi povrat treba prvo dogovoriti.</p>
+    <button class="btn primary sm" onclick="closeModal()">Razumem</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
 <script>
-const PHASES=[{name:'Kupac',sub:'pronađi potrebu',d:'kupac',steps:['Izaberi 1–2 grupe kupaca iz CITY MAP-a','Kontaktiraj bar 5 potencijalnih kupaca','Potvrdi tačnu specifikaciju i količinu','Potvrdi maksimalnu cenu i rok']},{name:'Ponuđači',sub:'traži jeftinije',d:'ponude',steps:['Pošalji upit za bar 5 ponuđača','Prikupi bar 3 pisane ponude','Proveri da li ponude ispunjavaju specifikaciju']},{name:'Provizija',sub:'dogovori pre otkrivanja',d:'provizija',steps:['Predloži proviziju svakom ponuđaču','Dobij pisanu potvrdu (mejl ili predračun)']},{name:'Spajanje',sub:'predstavi ponude',d:'spajanje',steps:['Pošalji kupcu pregled dogovorenih ponuda','Organizuj kontakt kupca i ponuđača','Zabeleži ishod i naplati proviziju']}];
-const CITY=[{c:'start',t:'Ugostiteljski objekti pred sezonu bašti',d:'Kafići i restorani u Vračaru i Dorćolu menjaju baštenski nameštaj februar–april. Pristup: lično ili preko Instagrama.'},{c:'start',t:'Novootvorene firme (APR)',d:'Nove firme kupuju opremu, uniforme, štampu. Spisak novih registracija je javan.'},{c:'start',t:'Grupe za nabavku na Facebooku',d:'Lokalne grupe gde firme i preduzetnici pitaju „ko može da nabavi…“.'},{c:'posao',t:'Industrijska zona Krnjača / Pančevački put',d:'Distributeri nameštaja, ambalaže i opreme — dobri ponuđači sa veleprodajnim cenama.'},{c:'posao',t:'Proizvođači u okolini (Stara Pazova, Šimanovci)',d:'Manji proizvođači često nemaju prodajnu službu i rado prihvataju proviziju.'},{c:'posao',t:'Sajam i specijalizovani izlagači',d:'Katalozi izlagača sa sajmova = gotova lista ponuđača po kategorijama.'},{c:'skal',t:'Ponavljajući kupci',d:'Isti kafić sledeće godine treba suncobrane, jastuke, grejalice — vodi spisak.'},{c:'skal',t:'Lanci i franšize',d:'Jedan dogovor = više lokala. Zahteva referencu iz prvih poslova.'},{c:'skal',t:'Drugi gradovi (Novi Sad, Niš)',d:'Isti model, nova CITY MAP — ponuđači često ostaju isti.'}];
-const DEFAULT=()=>({buyer:'Kafe bar „Lipa“, Vračar',item:'Baštenske stolice',spec:'Aluminijum + ratan, slažu se jedna na drugu, otporne na UV, boja antracit',qty:40,maxPrice:45,maxDays:14,deadline:'do 15. marta',source:'Instagram – objava o renoviranju bašte',outcome:'U toku',notes:'Vlasnik pomenuo da će možda trebati i 10 stolova. Pitati na sledećem sastanku.\\n\\nProveriti da li Demo Nameštaj daje garanciju 2 godine.',checks:[[true,true,true,true],[true,true,false],[false,false],[false,false,false]],offers:[{n:'Demo Nameštaj d.o.o.',city:'Stara Pazova',p:38,days:10,ok:true,model:'pct',val:7,st:'Dogovoreno',ex:true},{n:'Primer Bašta',city:'Beograd',p:41,days:7,ok:true,model:'fix',val:80,st:'U pregovoru',ex:true},{n:'Test Ratan',city:'Novi Sad',p:34,days:21,ok:false,model:'pct',val:5,st:'Nije počelo',ex:true}],log:[]});
-const KEY='4nooj-demo-v3';let S;let curD='pregled';let cityF='all';
-function load(){try{const r=localStorage.getItem(KEY);if(r){S=JSON.parse(r);return}}catch(e){}S=DEFAULT();const now=Date.now();S.log=[{t:now-864e5*3,m:'Kontaktirano 6 kafića na Vračaru',ex:true},{t:now-864e5*2,m:'Kupac „Lipa“ potvrdio specifikaciju: 40 stolica, max 45 €/kom, isporuka do 14 dana',ex:true},{t:now-864e5,m:'Dodata ponuda: Demo Nameštaj d.o.o. (38 €/kom)',ex:true},{t:now-36e5*5,m:'Demo Nameštaj potvrdio proviziju 7% mejlom',ex:true}]}
+const PHASES=[
+ {name:'Kupac',sub:'pronađi potrebu',d:'kupac',steps:['Izaberi 1–2 grupe kupaca iz CITY MAP-a','Kontaktiraj bar 5 potencijalnih kupaca','Potvrdi tačnu specifikaciju i količinu','Potvrdi maksimalnu cenu i rok']},
+ {name:'Ponuđači',sub:'traži jeftinije',d:'ponude',steps:['Pošalji upit za bar 5 ponuđača','Prikupi bar 3 pisane ponude','Proveri da li ponude ispunjavaju specifikaciju']},
+ {name:'Provizija',sub:'dogovori pre otkrivanja',d:'provizija',steps:['Predloži proviziju svakom ponuđaču','Dobij pisanu potvrdu (mejl ili predračun)']},
+ {name:'Spajanje',sub:'predstavi ponude',d:'spajanje',steps:['Pošalji kupcu pregled dogovorenih ponuda','Organizuj kontakt kupca i ponuđača','Zabeleži ishod i naplati proviziju']}
+];
+const CITY=[
+ {c:'start',t:'Ugostiteljski objekti pred sezonu bašti',d:'Kafići i restorani u Vračaru i Dorćolu menjaju baštenski nameštaj februar–april. Pristup: lično ili preko Instagrama.'},
+ {c:'start',t:'Novootvorene firme (APR)',d:'Nove firme kupuju opremu, uniforme, štampu. Spisak novih registracija je javan.'},
+ {c:'start',t:'Grupe za nabavku na Facebooku',d:'Lokalne grupe gde firme i preduzetnici pitaju „ko može da nabavi…“.'},
+ {c:'posao',t:'Industrijska zona Krnjača / Pančevački put',d:'Distributeri nameštaja, ambalaže i opreme — dobri ponuđači sa veleprodajnim cenama.'},
+ {c:'posao',t:'Proizvođači u okolini (Stara Pazova, Šimanovci)',d:'Manji proizvođači često nemaju prodajnu službu i rado prihvataju proviziju.'},
+ {c:'posao',t:'Sajam i specijalizovani izlagači',d:'Katalozi izlagača sa sajmova = gotova lista ponuđača po kategorijama.'},
+ {c:'skal',t:'Ponavljajući kupci',d:'Isti kafić sledeće godine treba suncobrane, jastuke, grejalice — vodi spisak.'},
+ {c:'skal',t:'Lanci i franšize',d:'Jedan dogovor = više lokala. Zahteva referencu iz prvih poslova.'},
+ {c:'skal',t:'Drugi gradovi (Novi Sad, Niš)',d:'Isti model, nova CITY MAP — ponuđači često ostaju isti.'}
+];
+const DEFAULT=()=>({
+ buyer:'Kafe bar „Lipa“, Vračar',item:'Baštenske stolice',spec:'Aluminijum + ratan, slažu se jedna na drugu, otporne na UV, boja antracit',qty:40,maxPrice:45,maxDays:14,deadline:'do 15. marta',source:'Instagram – objava o renoviranju bašte',outcome:'U toku',
+ notes:'Vlasnik pomenuo da će možda trebati i 10 stolova. Pitati na sledećem sastanku.\n\nProveriti da li Demo Nameštaj daje garanciju 2 godine.',
+ checks:[[true,true,true,true],[true,true,false],[false,false],[false,false,false]],
+ offers:[
+  {n:'Demo Nameštaj d.o.o.',city:'Stara Pazova',p:38,days:10,ok:true,model:'pct',val:7,st:'Dogovoreno',ex:true},
+  {n:'Primer Bašta',city:'Beograd',p:41,days:7,ok:true,model:'fix',val:80,st:'U pregovoru',ex:true},
+  {n:'Test Ratan',city:'Novi Sad',p:34,days:21,ok:false,model:'pct',val:5,st:'Nije počelo',ex:true}
+ ],
+ log:[]
+});
+const KEY='4nooj-demo-v3';
+let S; let curD='pregled'; let cityF='all';
+function load(){try{const r=localStorage.getItem(KEY);if(r){S=JSON.parse(r);return}}catch(e){} S=DEFAULT();
+ const now=Date.now(); S.log=[{t:now-864e5*3,m:'Kontaktirano 6 kafića na Vračaru',ex:true},{t:now-864e5*2,m:'Kupac „Lipa“ potvrdio specifikaciju: 40 stolica, max 45 €/kom, isporuka do 14 dana',ex:true},{t:now-864e5,m:'Dodata ponuda: Demo Nameštaj d.o.o. (38 €/kom)',ex:true},{t:now-36e5*5,m:'Demo Nameštaj potvrdio proviziju 7% mejlom',ex:true}];}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
-const eur=n=>(Math.round(n*100)/100).toLocaleString('sr-RS',{minimumFractionDigits:0,maximumFractionDigits:2})+' €';const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));const exTag=x=>x?' <span class="tag ex">primer</span>':'';
+const eur=n=>(Math.round(n*100)/100).toLocaleString('sr-RS',{minimumFractionDigits:0,maximumFractionDigits:2})+' €';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const exTag=x=>x?' <span class="tag ex">primer</span>':'';
 function logIt(m){S.log.unshift({t:Date.now(),m});save();renderLog()}
-function validate(kind,raw){const t=String(raw).trim().replace(',','.');if(t==='')return 'Polje ne sme biti prazno';const v=Number(t);if(!isFinite(v))return 'Unesi broj';if(kind==='qty'&&(!Number.isInteger(v)||v<1))return 'Količina mora biti ceo broj, najmanje 1';if(kind==='price'&&v<=0)return 'Cena mora biti veća od 0';if(kind==='days'&&(!Number.isInteger(v)||v<1))return 'Rok mora biti ceo broj dana, najmanje 1';if(kind==='pct'&&(v<=0||v>100))return 'Procenat mora biti veći od 0 i najviše 100';if(kind==='fix'&&v<0)return 'Fiksni iznos ne može biti negativan';return ''}
-const numOf=raw=>Number(String(raw).trim().replace(',','.'));function markBad(el,err){el.classList.toggle('bad',!!err);el.title=err||''}function fixBad(el,val){if(el.classList.contains('bad')){const msg=el.title;el.value=val;markBad(el,'');toast('Nije prihvaćeno: '+msg+'. Vraćena prethodna vrednost.')}}
+
+/* ---- provera unosa ---- */
+function validate(kind,raw){
+ const t=String(raw).trim().replace(',','.');
+ if(t==='')return 'Polje ne sme biti prazno';
+ const v=Number(t); if(!isFinite(v))return 'Unesi broj';
+ if(kind==='qty'&&(!Number.isInteger(v)||v<1))return 'Količina mora biti ceo broj, najmanje 1';
+ if(kind==='price'&&v<=0)return 'Cena mora biti veća od 0';
+ if(kind==='days'&&(!Number.isInteger(v)||v<1))return 'Rok mora biti ceo broj dana, najmanje 1';
+ if(kind==='pct'&&(v<=0||v>100))return 'Procenat mora biti veći od 0 i najviše 100';
+ if(kind==='fix'&&v<0)return 'Fiksni iznos ne može biti negativan';
+ return '';
+}
+const numOf=raw=>Number(String(raw).trim().replace(',','.'));
+function markBad(el,err){el.classList.toggle('bad',!!err);el.title=err||''}
+function fixBad(el,val){if(el.classList.contains('bad')){const msg=el.title;el.value=val;markBad(el,'');toast('Nije prihvaćeno: '+msg+'. Vraćena prethodna vrednost.')}}
 const BUYER_NUM={qty:'qty',maxPrice:'price',maxDays:'days'};
-function go(v){document.querySelectorAll('.view').forEach(e=>e.classList.toggle('on',e.id==='v-'+v));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));window.scrollTo({top:0,behavior:'smooth'});if(v==='dash')renderAll()}
-function dgo(d){curD=d;document.querySelectorAll('.dv').forEach(e=>e.classList.toggle('on',e.id==='d-'+d));document.querySelectorAll('.side button[data-d]').forEach(b=>b.classList.toggle('on',b.dataset.d===d));document.getElementById('mobMenu').value=d;renderAll()}
+
+function go(v){document.querySelectorAll('.view').forEach(e=>e.classList.toggle('on',e.id==='v-'+v));
+ document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));window.scrollTo({top:0,behavior:'smooth'});if(v==='dash')renderAll()}
+function dgo(d){curD=d;document.querySelectorAll('.dv').forEach(e=>e.classList.toggle('on',e.id==='d-'+d));
+ document.querySelectorAll('.side button[data-d]').forEach(b=>b.classList.toggle('on',b.dataset.d===d));document.getElementById('mobMenu').value=d;renderAll()}
 document.querySelectorAll('.side button[data-d]').forEach(b=>b.onclick=()=>dgo(b.dataset.d));
-function phaseDone(i){return S.checks[i].every(Boolean)}function curPhase(){for(let i=0;i<4;i++)if(!phaseDone(i))return i;return 3}function progress(){const all=S.checks.flat();return Math.round(all.filter(Boolean).length/all.length*100)}
-function renderSteps(){const cp=curPhase();document.getElementById('steps5').innerHTML=PHASES.map((p,i)=>{const cls=phaseDone(i)?'done':(i===cp?'cur':'');return \`<div class="s5 \${cls}" onclick="dgo('\${p.d}')"><div class="n">\${phaseDone(i)?'✓':i+1}</div><div>\${p.name}<small>\${p.sub}</small></div></div>\`}).join('')}
-function renderChecklists(){document.querySelectorAll('.checklist').forEach(ul=>{const pi=+ul.dataset.phase;ul.innerHTML=PHASES[pi].steps.map((s,si)=>\`<li class="\${S.checks[pi][si]?'d':''}"><input type="checkbox" \${S.checks[pi][si]?'checked':''} onchange="tick(\${pi},\${si},this.checked)"><span>\${esc(s)}</span></li>\`).join('')})}
+
+function phaseDone(i){return S.checks[i].every(Boolean)}
+function curPhase(){for(let i=0;i<4;i++)if(!phaseDone(i))return i;return 3}
+function progress(){const all=S.checks.flat();return Math.round(all.filter(Boolean).length/all.length*100)}
+
+function renderSteps(){const cp=curPhase();document.getElementById('steps5').innerHTML=PHASES.map((p,i)=>{
+ const cls=phaseDone(i)?'done':(i===cp?'cur':'');return `<div class="s5 ${cls}" onclick="dgo('${p.d}')"><div class="n">${phaseDone(i)?'✓':i+1}</div><div>${p.name}<small>${p.sub}</small></div></div>`}).join('')}
+
+function renderChecklists(){document.querySelectorAll('.checklist').forEach(ul=>{const pi=+ul.dataset.phase;
+ ul.innerHTML=PHASES[pi].steps.map((s,si)=>`<li class="${S.checks[pi][si]?'d':''}"><input type="checkbox" ${S.checks[pi][si]?'checked':''} onchange="tick(${pi},${si},this.checked)"><span>${esc(s)}</span></li>`).join('')})}
 function tick(p,s,v){S.checks[p][s]=v;if(v)logIt('Urađeno: '+PHASES[p].steps[s]);save();renderAll()}
-function bindBuyer(){document.querySelectorAll('[data-b]').forEach(el=>{const k=el.dataset.b;const kind=BUYER_NUM[k];if(document.activeElement!==el&&!el.classList.contains('bad'))el.value=S[k]??'';el.oninput=()=>{if(kind){const err=validate(kind,el.value);markBad(el,err);if(err)return;S[k]=numOf(el.value)}else{S[k]=el.value}save();syncDeals()};el.onblur=()=>{if(kind)fixBad(el,S[k])}})}
-function offerTotal(o){return o.p*(+S.qty||0)}function commission(o){return o.model==='pct'?offerTotal(o)*(+o.val||0)/100:(+o.val||0)}
-function problems(o){const r=[];if(!o.ok)r.push('ne ispunjava specifikaciju');if(!(o.p>0))r.push('nema cene');else if(o.p>S.maxPrice)r.push('cena iznad '+eur(+S.maxPrice));if(!(o.days>0))r.push('nema roka');else if(o.days>S.maxDays)r.push('isporuka duža od '+S.maxDays+' dana');return r}
-function eligible(o){return problems(o).length===0}function bestOffer(){return S.offers.filter(eligible).sort((a,b)=>a.p-b.p||a.days-b.days)[0]}
-function condHTML(o){const r=problems(o);return r.length?\`<div class="cond no">✗ \${r.map(esc).join('<br>✗ ')}</div>\`:'<div class="cond ok">✓ ispunjava sve uslove</div>'}
-function diffHTML(o,best){const diff=((+S.maxPrice||0)-(+o.p||0))*(+S.qty||0);return \`<span class="\${diff>=0?'pos':'neg'}">\${diff>=0?'+':''}\${eur(diff)}</span>\${best===o?' ⭐':''}\`}
-function renderOffers(){const best=bestOffer();document.getElementById('offerRows').innerHTML=S.offers.map((o,i)=>\`<tr id="orow\${i}" class="\${best===o?'best':''}"><td><input class="inp" value="\${esc(o.n)}" oninput="upd(\${i},'n',this.value)">\${exTag(o.ex)}</td><td><input class="inp" value="\${esc(o.city)}" oninput="upd(\${i},'city',this.value)"></td><td><input class="inp" type="number" min="0" step="0.5" value="\${o.p}" oninput="setNum(this,\${i},'p','price')" onblur="fixBad(this,S.offers[\${i}].p)" style="width:80px"></td><td><input class="inp" type="number" min="1" step="1" value="\${o.days}" oninput="setNum(this,\${i},'days','days')" onblur="fixBad(this,S.offers[\${i}].days)" style="width:70px"></td><td><input type="checkbox" \${o.ok?'checked':''} onchange="upd(\${i},'ok',this.checked,true)" style="width:18px;height:18px;accent-color:var(--green)"></td><td id="cond\${i}">\${condHTML(o)}</td><td id="diff\${i}">\${diffHTML(o,best)}</td><td><button class="link" onclick="delOffer(\${i})" title="Obriši">✕</button></td></tr>\`).join('')}
-function refreshOfferCells(){const best=bestOffer();S.offers.forEach((o,i)=>{const row=document.getElementById('orow'+i);if(!row)return;row.className=best===o?'best':'';document.getElementById('cond'+i).innerHTML=condHTML(o);document.getElementById('diff'+i).innerHTML=diffHTML(o,best)})}
+
+function bindBuyer(){document.querySelectorAll('[data-b]').forEach(el=>{const k=el.dataset.b;const kind=BUYER_NUM[k];
+ if(document.activeElement!==el&&!el.classList.contains('bad'))el.value=S[k]??'';
+ el.oninput=()=>{if(kind){const err=validate(kind,el.value);markBad(el,err);if(err)return;S[k]=numOf(el.value)}else{S[k]=el.value}
+  save();syncDeals()};
+ el.onblur=()=>{if(kind)fixBad(el,S[k])}})}
+
+/* ---- ponude i uslovi kupca ---- */
+function offerTotal(o){return o.p*(+S.qty||0)}
+function commission(o){return o.model==='pct'?offerTotal(o)*(+o.val||0)/100:(+o.val||0)}
+function problems(o){const r=[];
+ if(!o.ok)r.push('ne ispunjava specifikaciju');
+ if(!(o.p>0))r.push('nema cene');else if(o.p>S.maxPrice)r.push('cena iznad '+eur(+S.maxPrice));
+ if(!(o.days>0))r.push('nema roka');else if(o.days>S.maxDays)r.push('isporuka duža od '+S.maxDays+' dana');
+ return r}
+function eligible(o){return problems(o).length===0}
+function bestOffer(){return S.offers.filter(eligible).sort((a,b)=>a.p-b.p||a.days-b.days)[0]}
+function condHTML(o){const r=problems(o);return r.length?`<div class="cond no">✗ ${r.map(esc).join('<br>✗ ')}</div>`:'<div class="cond ok">✓ ispunjava sve uslove</div>'}
+function diffHTML(o,best){const diff=((+S.maxPrice||0)-(+o.p||0))*(+S.qty||0);return `<span class="${diff>=0?'pos':'neg'}">${diff>=0?'+':''}${eur(diff)}</span>${best===o?' ⭐':''}`}
+function renderOffers(){const best=bestOffer();document.getElementById('offerRows').innerHTML=S.offers.map((o,i)=>
+ `<tr id="orow${i}" class="${best===o?'best':''}"><td><input class="inp" value="${esc(o.n)}" oninput="upd(${i},'n',this.value)">${exTag(o.ex)}</td>
+ <td><input class="inp" value="${esc(o.city)}" oninput="upd(${i},'city',this.value)"></td>
+ <td><input class="inp" type="number" min="0" step="0.5" value="${o.p}" oninput="setNum(this,${i},'p','price')" onblur="fixBad(this,S.offers[${i}].p)" style="width:80px"></td>
+ <td><input class="inp" type="number" min="1" step="1" value="${o.days}" oninput="setNum(this,${i},'days','days')" onblur="fixBad(this,S.offers[${i}].days)" style="width:70px"></td>
+ <td><input type="checkbox" ${o.ok?'checked':''} onchange="upd(${i},'ok',this.checked,true)" style="width:18px;height:18px;accent-color:var(--green)"></td>
+ <td id="cond${i}">${condHTML(o)}</td>
+ <td id="diff${i}">${diffHTML(o,best)}</td>
+ <td><button class="link" onclick="delOffer(${i})" title="Obriši">✕</button></td></tr>`).join('')}
+function refreshOfferCells(){const best=bestOffer();S.offers.forEach((o,i)=>{const row=document.getElementById('orow'+i);if(!row)return;
+ row.className=best===o?'best':'';document.getElementById('cond'+i).innerHTML=condHTML(o);document.getElementById('diff'+i).innerHTML=diffHTML(o,best)})}
 function setNum(el,i,k,kind){const err=validate(kind,el.value);markBad(el,err);if(err)return;upd(i,k,numOf(el.value))}
 function upd(i,k,v,full){S.offers[i][k]=v;save();if(full){renderAll()}else{syncDeals()}}
 function setModel(i,m){const o=S.offers[i];o.model=m;const v=document.getElementById('val'+i);if(v)markBad(v,'');if(validate(m,o.val)){o.val=m==='pct'?5:50;toast('Iznos provizije podešen na '+(m==='pct'?'5%':'50 €')+' — proveri ga')}save();syncDeals()}
-function addOffer(){S.offers.push({n:'Novi ponuđač',city:'',p:0,days:0,ok:false,model:'pct',val:5,st:'Nije počelo'});logIt('Dodat novi ponuđač');renderAll()}function delOffer(i){S.offers.splice(i,1);save();renderAll()}
+function addOffer(){S.offers.push({n:'Novi ponuđač',city:'',p:0,days:0,ok:false,model:'pct',val:5,st:'Nije počelo'});logIt('Dodat novi ponuđač');renderAll()}
+function delOffer(i){S.offers.splice(i,1);save();renderAll()}
+
 const STS=['Nije počelo','U pregovoru','Dogovoreno','Odbijeno'];const STC={'Nije počelo':'st-n','U pregovoru':'st-p','Dogovoreno':'st-d','Odbijeno':'st-x'};
-function renderComm(){const rows=S.offers.map((o,i)=>({o,i})).filter(x=>eligible(x.o));document.getElementById('commRows').innerHTML=rows.length?rows.map(({o,i})=>\`<tr data-i="\${i}"><td><b>\${esc(o.n)}</b>\${exTag(o.ex)}<div class="small muted" id="sub\${i}">\${eur(o.p)}/kom · \${o.days} dana</div></td><td id="tot\${i}">\${eur(offerTotal(o))}</td><td><select class="inp" id="model\${i}" onchange="setModel(\${i},this.value)"><option value="pct" \${o.model==='pct'?'selected':''}>% od posla</option><option value="fix" \${o.model==='fix'?'selected':''}>fiksno €</option></select></td><td><input class="inp" id="val\${i}" type="number" min="0" \${o.model==='pct'?'max="100" step="0.5"':'step="1"'} value="\${o.val}" style="width:80px" oninput="setNum(this,\${i},'val',S.offers[\${i}].model)" onblur="fixBad(this,S.offers[\${i}].val)"></td><td class="pos" id="earn\${i}">\${eur(commission(o))}</td><td><select class="status \${STC[o.st]}" id="st\${i}" onchange="upd(\${i},'st',this.value,true);logIt('\${esc(o.n).replace(/'/g,'')}: status → '+this.value)">\${STS.map(s=>\`<option \${s===o.st?'selected':''}>\${s}</option>\`).join('')}</select></td></tr>\`).join(''):'<tr><td colspan="6" class="muted">Nema ponuda koje ispunjavaju sve uslove kupca — vrati se na fazu 2.</td></tr>'}
-const focusIn=sel=>!!document.activeElement?.closest(sel);function commRowIds(){return [...document.querySelectorAll('#commRows tr[data-i]')].map(r=>+r.dataset.i)}function eligibleIds(){return S.offers.map((o,i)=>eligible(o)?i:-1).filter(i=>i>=0)}
-function refreshCommCells(){commRowIds().forEach(i=>{const o=S.offers[i];if(!o)return;const tot=document.getElementById('tot'+i);if(tot)tot.textContent=eur(offerTotal(o));const sub=document.getElementById('sub'+i);if(sub)sub.textContent=\`\${eur(o.p)}/kom · \${o.days} dana\`;const e=document.getElementById('earn'+i);if(e)e.textContent=eur(commission(o));const m=document.getElementById('model'+i);if(m&&m!==document.activeElement)m.value=o.model;const v=document.getElementById('val'+i);if(v){if(o.model==='pct'){v.max='100';v.step='0.5'}else{v.removeAttribute('max');v.step='1'}if(v!==document.activeElement&&!v.classList.contains('bad'))v.value=o.val}const st=document.getElementById('st'+i);if(st){st.className='status '+STC[o.st];if(st!==document.activeElement)st.value=o.st}})}
-function syncDeals(){if(focusIn('#offerRows'))refreshOfferCells();else renderOffers();const same=JSON.stringify(commRowIds())===JSON.stringify(eligibleIds());if(focusIn('#commRows')&&same)refreshCommCells();else renderComm();renderNumbers();renderMsgs()}
+function renderComm(){const rows=S.offers.map((o,i)=>({o,i})).filter(x=>eligible(x.o));
+ document.getElementById('commRows').innerHTML=rows.length?rows.map(({o,i})=>`<tr data-i="${i}"><td><b>${esc(o.n)}</b>${exTag(o.ex)}<div class="small muted" id="sub${i}">${eur(o.p)}/kom · ${o.days} dana</div></td>
+ <td id="tot${i}">${eur(offerTotal(o))}</td>
+ <td><select class="inp" id="model${i}" onchange="setModel(${i},this.value)"><option value="pct" ${o.model==='pct'?'selected':''}>% od posla</option><option value="fix" ${o.model==='fix'?'selected':''}>fiksno €</option></select></td>
+ <td><input class="inp" id="val${i}" type="number" min="0" ${o.model==='pct'?'max="100" step="0.5"':'step="1"'} value="${o.val}" style="width:80px" oninput="setNum(this,${i},'val',S.offers[${i}].model)" onblur="fixBad(this,S.offers[${i}].val)"></td>
+ <td class="pos" id="earn${i}">${eur(commission(o))}</td>
+ <td><select class="status ${STC[o.st]}" id="st${i}" onchange="upd(${i},'st',this.value,true);logIt('${esc(o.n).replace(/'/g,'')}: status → '+this.value)">${STS.map(s=>`<option ${s===o.st?'selected':''}>${s}</option>`).join('')}</select></td></tr>`).join('')
+ :'<tr><td colspan="6" class="muted">Nema ponuda koje ispunjavaju sve uslove kupca — vrati se na fazu 2.</td></tr>'}
+
+/* ---- osvežavanje svega što zavisi od uslova kupca i ponuda ----
+   Tabela u kojoj je fokus se ne pravi ponovo (da se ne prekine unos), već joj se osvežavaju ćelije. */
+const focusIn=sel=>!!document.activeElement?.closest(sel);
+function commRowIds(){return [...document.querySelectorAll('#commRows tr[data-i]')].map(r=>+r.dataset.i)}
+function eligibleIds(){return S.offers.map((o,i)=>eligible(o)?i:-1).filter(i=>i>=0)}
+function refreshCommCells(){commRowIds().forEach(i=>{const o=S.offers[i];if(!o)return;
+ const tot=document.getElementById('tot'+i);if(tot)tot.textContent=eur(offerTotal(o));
+ const sub=document.getElementById('sub'+i);if(sub)sub.textContent=`${eur(o.p)}/kom · ${o.days} dana`;
+ const e=document.getElementById('earn'+i);if(e)e.textContent=eur(commission(o));
+ const m=document.getElementById('model'+i);if(m&&m!==document.activeElement)m.value=o.model;
+ const v=document.getElementById('val'+i);if(v){
+  if(o.model==='pct'){v.max='100';v.step='0.5'}else{v.removeAttribute('max');v.step='1'}
+  if(v!==document.activeElement&&!v.classList.contains('bad'))v.value=o.val}
+ const st=document.getElementById('st'+i);if(st){st.className='status '+STC[o.st];if(st!==document.activeElement)st.value=o.st}})}
+function syncDeals(){
+ if(focusIn('#offerRows'))refreshOfferCells();else renderOffers();
+ const same=JSON.stringify(commRowIds())===JSON.stringify(eligibleIds());
+ if(focusIn('#commRows')&&same)refreshCommCells();else renderComm();
+ renderNumbers();renderMsgs()}
+
 function agreedOffers(){return S.offers.filter(o=>eligible(o)&&o.st==='Dogovoreno')}
-function renderNumbers(){const b=bestOffer();const agreed=agreedOffers();document.getElementById('dealTitle').textContent='BUYER FIRST · '+(S.item||'novi posao');document.getElementById('budget').textContent=eur((+S.qty||0)*(+S.maxPrice||0))+\` (\${S.qty||0} × \${eur(+S.maxPrice||0)})\`;document.getElementById('condPrice').textContent=eur(+S.maxPrice||0)+'/kom';document.getElementById('condDays').textContent=(S.maxDays||0)+' dana';document.getElementById('kBuyer').innerHTML=esc(S.buyer||'—')+exTag(S.buyer===DEFAULT().buyer);document.getElementById('kNeed').textContent=\`\${S.qty||0} × \${S.item||''}, max \${eur(+S.maxPrice||0)}/kom, isporuka do \${S.maxDays||0} dana\`;document.getElementById('kOffers').textContent=S.offers.filter(eligible).length;document.getElementById('kBest').textContent=b?\`Najbolja: \${b.n}, \${eur(b.p)}/kom, \${b.days} dana\`:'još nema';const sum=agreed.reduce((a,o)=>a+commission(o),0);document.getElementById('kEarn').textContent=eur(sum);document.getElementById('kEarnSub').textContent=agreed.length>1?\`\${agreed.length} dogovora · kupac obično bira jednu ponudu, pa je stvarna zarada verovatno manja\`:agreed.length===1?'1 dogovor · nije zagarantovano dok posao nije realizovan':'još nema dogovorenih provizija';const cp=curPhase();const nxt=S.checks[cp].findIndex(x=>!x);document.getElementById('nextTxt').innerHTML=\`Faza \${cp+1} · \${PHASES[cp].name}: \${nxt>=0?esc(PHASES[cp].steps[nxt]):'sve završeno 🎉'}\`;document.getElementById('nextBar').style.width=progress()+'%';document.getElementById('nextPct').textContent=progress()+'% hodograma urađeno (na osnovu označenih koraka)'}
+function renderNumbers(){const b=bestOffer();const agreed=agreedOffers();
+ document.getElementById('dealTitle').textContent='BUYER FIRST · '+(S.item||'novi posao');
+ document.getElementById('budget').textContent=eur((+S.qty||0)*(+S.maxPrice||0))+` (${S.qty||0} × ${eur(+S.maxPrice||0)})`;
+ document.getElementById('condPrice').textContent=eur(+S.maxPrice||0)+'/kom';document.getElementById('condDays').textContent=(S.maxDays||0)+' dana';
+ document.getElementById('kBuyer').innerHTML=esc(S.buyer||'—')+exTag(S.buyer===DEFAULT().buyer);
+ document.getElementById('kNeed').textContent=`${S.qty||0} × ${S.item||''}, max ${eur(+S.maxPrice||0)}/kom, isporuka do ${S.maxDays||0} dana`;
+ document.getElementById('kOffers').textContent=S.offers.filter(eligible).length;
+ document.getElementById('kBest').textContent=b?`Najbolja: ${b.n}, ${eur(b.p)}/kom, ${b.days} dana`:'još nema';
+ const sum=agreed.reduce((a,o)=>a+commission(o),0);document.getElementById('kEarn').textContent=eur(sum);
+ document.getElementById('kEarnSub').textContent=agreed.length>1?`${agreed.length} dogovora · kupac obično bira jednu ponudu, pa je stvarna zarada verovatno manja`:agreed.length===1?'1 dogovor · nije zagarantovano dok posao nije realizovan':'još nema dogovorenih provizija';
+ const cp=curPhase();const nxt=S.checks[cp].findIndex(x=>!x);
+ document.getElementById('nextTxt').innerHTML=`Faza ${cp+1} · ${PHASES[cp].name}: ${nxt>=0?esc(PHASES[cp].steps[nxt]):'sve završeno 🎉'}`;
+ document.getElementById('nextBar').style.width=progress()+'%';document.getElementById('nextPct').textContent=progress()+'% hodograma urađeno (na osnovu označenih koraka)'}
 function continueWork(){dgo(PHASES[curPhase()].d)}
-function renderMsgs(){const ag=agreedOffers();document.getElementById('introMsg').textContent=ag.length?\`Poštovani,
 
-u vezi sa vašim upitom za \${S.item?.toLowerCase()} (\${S.qty} kom, \${S.spec}), pronašla sam \${ag.length===1?'ponudu koja ispunjava':'ponude koje ispunjavaju'} vaše uslove:
+function renderMsgs(){const ag=agreedOffers();
+ document.getElementById('introMsg').textContent=ag.length?
+`Poštovani,
 
-\${ag.map((o,i)=>\`\${i+1}. \${o.n} (\${o.city}) – \${eur(o.p)} po komadu, ukupno \${eur(offerTotal(o))}, isporuka \${o.days} dana\`).join('\\n')}
+u vezi sa vašim upitom za ${S.item?.toLowerCase()} (${S.qty} kom, ${S.spec}), pronašla sam ${ag.length===1?'ponudu koja ispunjava':'ponude koje ispunjavaju'} vaše uslove:
 
-Rok koji ste naveli: \${S.deadline}. Ukoliko vam neka od ponuda odgovara, rado ću vas povezati sa ponuđačem i dogovoriti dalje korake.
+${ag.map((o,i)=>`${i+1}. ${o.n} (${o.city}) – ${eur(o.p)} po komadu, ukupno ${eur(offerTotal(o))}, isporuka ${o.days} dana`).join('\n')}
 
-Srdačan pozdrav\`:'Još nema dogovorenih ponuda koje ispunjavaju uslove kupca. Postavi status „Dogovoreno“ u fazi 3.';renderAI()}
-function renderAI(){const t=document.getElementById('aiTask').value;const P={find:\`Radim kao posrednik u nabavci u Srbiji. Kupac traži: \${S.qty} kom – \${S.item}. Specifikacija: \${S.spec}. Maksimalna cena: \${S.maxPrice} € po komadu, isporuka najviše \${S.maxDays} dana, rok \${S.deadline}.
+Rok koji ste naveli: ${S.deadline}. Ukoliko vam neka od ponuda odgovara, rado ću vas povezati sa ponuđačem i dogovoriti dalje korake.
 
-Napravi listu od 10 tipova ponuđača (proizvođači, distributeri, uvoznici) u Srbiji i regionu kod kojih da tražim ponudu, gde da ih pronađem (sajtovi, katalozi, sajmovi, registri) i koje ključne reči da koristim u pretrazi. Ne izmišljaj imena firmi.\`,rfq:\`Napiši kratak, profesionalan mejl ponuđaču na srpskom. Tražim ponudu za \${S.qty} kom – \${S.item}, specifikacija: \${S.spec}, isporuka \${S.deadline}. Ne otkrivaj ime kupca. Zamoli za cenu po komadu, rok isporuke, garanciju i uslove plaćanja. Ton: ljubazan, konkretan, do 120 reči.\`,comm:\`Pronašla sam kupca za \${S.qty} kom – \${S.item}. Ponuđač nudi \${(bestOffer()||{p:'?'}).p} € po komadu. Kako da mu predložim proviziju (procenat ili fiksni iznos) za dovođenje kupca, a da ne otkrijem kupca pre dogovora? Napiši predlog poruke i 3 moguća odgovora na njegove primedbe.\`,buyers:\`Živim u Beogradu i radim model „prvo kupac, pa proizvod“. Prvi posao: \${S.item} za ugostiteljski objekat. Predloži 10 drugih vrsta kupaca u gradu koji redovno kupuju opremu ili robu, kako da ih pronađem i kojom prvom porukom da im se obratim.\`};document.getElementById('aiOut').textContent=P[t]}
-function renderCity(){document.querySelectorAll('#cityFilter .chip').forEach(c=>c.classList.toggle('on',c.dataset.c===cityF));const L={start:'S',posao:'P',skal:'R'};document.getElementById('cityList').innerHTML=CITY.filter(p=>cityF==='all'||p.c===cityF).map(p=>\`<div class="pt"><div class="pin \${p.c}"><span>\${L[p.c]}</span></div><div><b>\${esc(p.t)}</b><div class="small muted">\${esc(p.d)}</div></div></div>\`).join('')}
+Srdačan pozdrav`:'Još nema dogovorenih ponuda koje ispunjavaju uslove kupca. Postavi status „Dogovoreno“ u fazi 3.';renderAI()}
+
+function renderAI(){const t=document.getElementById('aiTask').value;const P={
+ find:`Radim kao posrednik u nabavci u Srbiji. Kupac traži: ${S.qty} kom – ${S.item}. Specifikacija: ${S.spec}. Maksimalna cena: ${S.maxPrice} € po komadu, isporuka najviše ${S.maxDays} dana, rok ${S.deadline}.\n\nNapravi listu od 10 tipova ponuđača (proizvođači, distributeri, uvoznici) u Srbiji i regionu kod kojih da tražim ponudu, gde da ih pronađem (sajtovi, katalozi, sajmovi, registri) i koje ključne reči da koristim u pretrazi. Ne izmišljaj imena firmi.`,
+ rfq:`Napiši kratak, profesionalan mejl ponuđaču na srpskom. Tražim ponudu za ${S.qty} kom – ${S.item}, specifikacija: ${S.spec}, isporuka ${S.deadline}. Ne otkrivaj ime kupca. Zamoli za cenu po komadu, rok isporuke, garanciju i uslove plaćanja. Ton: ljubazan, konkretan, do 120 reči.`,
+ comm:`Pronašla sam kupca za ${S.qty} kom – ${S.item}. Ponuđač nudi ${(bestOffer()||{p:'?'}).p} € po komadu. Kako da mu predložim proviziju (procenat ili fiksni iznos) za dovođenje kupca, a da ne otkrijem kupca pre dogovora? Napiši predlog poruke i 3 moguća odgovora na njegove primedbe.`,
+ buyers:`Živim u Beogradu i radim model „prvo kupac, pa proizvod“. Prvi posao: ${S.item} za ugostiteljski objekat. Predloži 10 drugih vrsta kupaca u gradu koji redovno kupuju opremu ili robu, kako da ih pronađem i kojom prvom porukom da im se obratim.`};
+ document.getElementById('aiOut').textContent=P[t]}
+
+function renderCity(){document.querySelectorAll('#cityFilter .chip').forEach(c=>c.classList.toggle('on',c.dataset.c===cityF));
+ const L={start:'S',posao:'P',skal:'R'};document.getElementById('cityList').innerHTML=CITY.filter(p=>cityF==='all'||p.c===cityF).map(p=>`<div class="pt"><div class="pin ${p.c}"><span>${L[p.c]}</span></div><div><b>${esc(p.t)}</b><div class="small muted">${esc(p.d)}</div></div></div>`).join('')}
 document.querySelectorAll('#cityFilter .chip').forEach(c=>c.onclick=()=>{cityF=c.dataset.c;renderCity()});
-function renderLog(){document.getElementById('logList').innerHTML=[...S.log].sort((x,y)=>y.t-x.t).map(l=>\`<li><time>\${new Date(l.t).toLocaleString('sr-RS',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}</time>\${esc(l.m)}\${exTag(l.ex)}</li>\`).join('')}
+
+function renderLog(){document.getElementById('logList').innerHTML=[...S.log].sort((x,y)=>y.t-x.t).map(l=>`<li><time>${new Date(l.t).toLocaleString('sr-RS',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}</time>${esc(l.m)}${exTag(l.ex)}</li>`).join('')}
+
 function renderAll(){renderSteps();renderChecklists();bindBuyer();syncDeals();renderCity();renderLog()}
 function resetDemo(){try{localStorage.removeItem(KEY)}catch(e){}document.querySelectorAll('.inp.bad').forEach(e=>markBad(e,''));load();save();renderAll();toast('Primer je vraćen')}
 function copyEl(id){const t=document.getElementById(id).textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Kopirano ✓')).catch(()=>{const r=document.createRange();r.selectNodeContents(document.getElementById(id));const s=getSelection();s.removeAllRanges();s.addRange(r);toast('Označeno — pritisni Ctrl+C')})}
-function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2200)}function openModal(){document.getElementById('modal').classList.add('on')}function closeModal(){document.getElementById('modal').classList.remove('on')}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2200)}
+function openModal(){document.getElementById('modal').classList.add('on')}
+function closeModal(){document.getElementById('modal').classList.remove('on')}
 load();renderAll();
 </script>
 </body>
