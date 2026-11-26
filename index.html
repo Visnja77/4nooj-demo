@@ -406,6 +406,20 @@ body[data-view=free] .top .logo{text-shadow:0 0 10px rgba(255,250,240,.95),0 0 3
   #v-free .path .st{width:86px;height:76px;font-size:10px}
   #v-free .path .st svg{width:22px;height:22px}
 }
+
+/* Kako funkcionira – korak po korak */
+.how{max-width:1100px;margin:28px auto 0;background:rgba(255,251,244,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:22px;padding:22px 26px;box-shadow:var(--shadow);scroll-margin-top:90px}
+.how h2{margin:0 0 4px;color:var(--navy);font-size:clamp(20px,2.2vw,28px)}
+.how-lead{margin:0 0 16px;color:var(--muted)}
+.how-steps{list-style:none;counter-reset:hs;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px 18px}
+.how-steps li{counter-increment:hs;position:relative;padding:12px 14px 12px 54px;background:#fff;border-radius:14px;border:1px solid #eadfcf}
+.how-steps li::before{content:counter(hs);position:absolute;left:12px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center}
+.how-steps b{display:block;color:var(--navy);margin-bottom:2px}
+.how-steps span{font-size:14px;color:#4b5565;line-height:1.4}
+.how-ex{margin:16px 0 0;padding:12px 16px;border-left:4px solid var(--orange);background:#fff7ee;border-radius:0 12px 12px 0;font-size:15px}
+.activate .p small{display:block;font-size:11px;font-weight:700;opacity:.85;letter-spacing:.02em}
+@media (max-width:999px){.how-steps{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.how-steps{grid-template-columns:1fr}.how{padding:18px 16px}}
 </style>
 </head>
 <body data-view="home">
@@ -501,7 +515,7 @@ body[data-view=free] .top .logo{text-shadow:0 0 10px rgba(255,250,240,.95),0 0 3
         <p>Mi smo tu samo da ti budemo podrška i pomoć.</p>
         <div class="guar">
           <svg width="54" height="60" aria-hidden="true"><use href="#i-shield"/></svg>
-          <div><b>Naša garancija</b><span>Ako se budeš pridržavao/la smjernica, možeš zaista i uspjeti.</span><br><button class="lnk" onclick="openInfo('garancija')">Što je naša garancija?</button></div>
+          <div><b>Uvjetovano jamstvo povrata</b><span>Ispuniš li uvjete programa, a ne ostvariš minimalni rezultat, vraćamo ti ulog. Nije jamstvo zarade.</span> <button class="lnk" onclick="openInfo('garancija')">Koji su uvjeti?</button></div>
         </div>
         <div class="ready">Jesi li spreman?</div>
         <button class="btn primary big" onclick="go('free')">Krenimo <span aria-hidden="true">›</span></button>
@@ -561,19 +575,33 @@ body[data-view=free] .top .logo{text-shadow:0 0 10px rgba(255,250,240,.95),0 0 3
           <div class="body">
             <h3><svg style="color:#7b4fc9"><use href="#i-map"/></svg>Kako funkcionira 4NOOJ?</h3>
             <ul style="--c:#7b4fc9"><li>Operativni programi i hodogrami</li><li>CITY MAP – istraživanje tržišta korak po korak</li><li>AI asistent i praktični alati</li><li>Personalizacija tvog poslovnog modela</li><li>Koordinacija i provođenje više smjerova</li><li>Mentorstvo, praćenje i razvoj</li><li>Izgradnja i skaliranje vlastitog sustava</li></ul>
-            <button class="btn soft sm" onclick="go('dash')">Pogledaj kako radi ›</button>
+            <button class="btn soft sm" onclick="document.getElementById('kako').scrollIntoView({behavior:'smooth',block:'start'})">Pogledaj kako radi ›</button>
           </div>
         </article>
       </div>
 
+      <section class="how" id="kako">
+        <h2>Kako funkcionira 4NOOJ – korak po korak</h2>
+        <p class="how-lead">Od odabira posla do prvih rezultata: znaš što radiš svaki dan i imaš podršku na svakom koraku.</p>
+        <ol class="how-steps">
+          <li><b>Odabereš poslovni smjer</b><span>U FREE LOOK-u vidiš dostupne modele i biraš onaj koji ti odgovara, npr. Buyer First.</span></li>
+          <li><b>Aktiviraš pristup na 90 dana</b><span>Otvara se tvoj poslovni centar s programom, alatima i mentorstvom.</span></li>
+          <li><b>Pratiš operativni program</b><span>Hodogram te vodi korak po korak: što napraviti, kojim redom i s kojim predloškom.</span></li>
+          <li><b>Istražiš tržište u svom gradu</b><span>CITY MAP ti pomaže pronaći kupce i ponuđače tamo gdje živiš.</span></li>
+          <li><b>Radiš uz AI i mentora</b><span>AI asistent pomaže s upitima, ponudama i izračunima; mentor provjerava napredak na tri termina.</span></li>
+          <li><b>Bilježiš rad i rezultate</b><span>Dnevnik aktivnosti prati tvoj napredak i osnova je za uvjetovano jamstvo povrata.</span></li>
+        </ol>
+        <p class="how-ex"><b>Primjer (Buyer First):</b> restoran treba 40 vrtnih stolica → u CITY MAP-u pronađeš ponuđače → AI ti pomogne napisati upit → usporediš ponude → dogovoriš proviziju → spojiš kupca i ponuđača.</p>
+      </section>
+
       <div class="jamstvo">
         <svg aria-hidden="true"><use href="#i-shield"/></svg>
-        <div><b>Probaj, prati korake i gradi svoj poslovni model.</b><span class="g">Ako ispuniš uvjete programa, a ne ostvariš definirani minimalni poslovni rezultat – vraćamo ti ulog.</span></div>
+        <div><b>Probaj, prati korake i gradi svoj poslovni model.</b><span class="g">Ako ispuniš uvjete programa, a ne ostvariš definirani minimalni poslovni rezultat – vraćamo ti ulog. Ovo nije jamstvo zarade, nego uvjetovani povrat.</span></div>
         <button class="det" onclick="openInfo('garancija')"><svg width="30" height="30" style="color:#3f6fd8"><use href="#i-help"/></svg><span>Detalji jamstva<small>(uvjeti, aktivnosti i kriteriji povrata)</small></span></button>
       </div>
 
-      <div class="activate"><button class="btn primary" onclick="activate()"><span class="l">AKTIVIRAJ PUNI PRISTUP – 90 DANA ›</span><span class="p">87 €</span></button></div>
-      <p class="act-note">U demu se ne naplaćuje ništa: gumb otvara primjer poslovnog centra. Cijena je prijedlog iz dokumenta i još se usuglašava.</p>
+      <div class="activate"><button class="btn primary" onclick="activate()"><span class="l">AKTIVIRAJ PUNI PRISTUP – 90 DANA ›</span><span class="p">87 €<small>prijedlog cijene</small></span></button></div>
+      <p class="act-note">Cijena od 87 € za 90 dana je <b>prijedlog</b> i još se usuglašava. U demu se ništa ne naplaćuje.</p>
 
       <div class="feat">
         <div><svg style="color:var(--orange)"><use href="#i-target"/></svg>Provjereni<br>poslovni modeli</div>
@@ -878,7 +906,7 @@ const INFO={
  o4nooj:['O 4NOOJ-u','<p>4NOOJ (For New Online/Offline Jobs) je operativna platforma za razvoj vlastite poslovne aktivnosti – ne klasični portal za online poslove ni katalog gotovih zadataka.</p><p class="small muted">Korisnik je nositelj rada i poslovnih odluka; 4NOOJ pruža razrađene modele, strukturu, alate i podršku.</p>'],
  tvrtke:['Za male i mikro tvrtke','<p>Mala ili mikro tvrtka može iskoristiti poslovni model kao novu uslugu u postojećoj ponudi – bez ulaganja u novi alat ili edukaciju, uz operativni plan i podršku.</p>'],
  kontakt:['Kontakt','<p>U demu kontakt nije povezan. U pravoj verziji ovdje su podaci i obrazac Value Connecta.</p>'],
- garancija:['Što je naša garancija?','<p>Garancija <b>nije obećanje zarade</b>. To je uvjetovani povrat uloga: ako korisnik u 90 dana ispuni unaprijed objavljene uvjete aktivnosti, a ne ostvari definirani minimalni poslovni rezultat, ima pravo na povrat.</p><p class="small muted">Točne uvjete, evidenciju aktivnosti i kriterije povrata potrebno je definirati prije javne objave.</p>'],
+ garancija:['Uvjetovano jamstvo povrata','<p>Jamstvo <b>nije obećanje zarade ni poslovnog uspjeha</b>. To je uvjetovani povrat uloga: ako korisnik u 90 dana ispuni unaprijed objavljene uvjete programa, a ne ostvari definirani minimalni poslovni rezultat, ima pravo na povrat.</p><p><b>Primjeri uvjeta</b> (radni prijedlog):</p><ul class="small"><li>završeni koraci operativnog programa</li><li>evidentirane aktivnosti u dnevniku rada</li><li>iskorišteni mentorski termini</li></ul><p class="small">Vrijeme provedeno na stranici samo po sebi nije dokaz rada.</p><p class="small muted">Točne uvjete, evidenciju aktivnosti i kriterije povrata potrebno je definirati prije javne objave.</p>'],
  buyerfirst:['Buyer First – kupac kao polazna točka','<p>Umjesto da prvo tražiš što prodati, nađeš <b>nekoga tko već želi kupiti</b>. Zatim pronađeš ponuđače koji to mogu isporučiti povoljnije od cijene koju kupac prihvaća, dogovoriš proviziju i spojiš ih.</p><ol class="small"><li>Pronađi kupca i potrebu</li><li>Pronađi ponuđače</li><li>Dogovori proviziju</li><li>Spoji kupca i ponuđača</li></ol>'],
  izgradi:['Što možeš izgraditi?','<p>Samozapošljavanje, dodatnu zaradu uz posao, novu uslugu u postojećoj ponudi, proširenje male ili mikro tvrtke – ili kombinaciju više smjerova.</p>'],
  pristup:['Detalji pristupa','<p>Puni pristup traje 90 dana i uključuje operativne poslovne modele, hodograme i predloške, AI/API sredstva i tri mentorska termina.</p><p class="small muted">Cijena (prijedlog: 87 € za 90 dana), raspodjela sredstava i uvjeti obnove još se usuglašavaju.</p>']
